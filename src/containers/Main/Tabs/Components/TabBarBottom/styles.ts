@@ -1,16 +1,13 @@
 import styled from 'styled-components/native';
-import { MainProps } from './types';
+import { ContainerProps } from './types';
 
 // eslint-disable-next-line import/prefer-default-export
-export const Main = styled.View<MainProps>`
+export const Container = styled.View<ContainerProps>`
   flex-direction: row;
-  padding-top: 12px;
-  padding-bottom: ${({ safeBottom }) => safeBottom + 10}px;
+  justify-content: space-between;
+  padding: 10px 20px ${({ safeBottom }) => safeBottom + 10}px;
   border-top-width: 0;
-  z-index: 555;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: ${({ theme }) => theme.colors.blue};
+  background-color: ${({ theme }) => theme.colors.background};
+  box-shadow: 2px -5px 17px rgba(84, 87, 92, 0.1);
+  elevation: 1;
 `;

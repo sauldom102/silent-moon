@@ -3,8 +3,11 @@ import { ApolloClient, NormalizedCacheObject } from '@apollo/client';
 import noop from 'lodash/noop';
 import RNBootSplash from 'react-native-bootsplash';
 import { setupApollo } from 'apollo';
+import useThemeMode from 'theme/useThemeMode';
 
 const useConnect = () => {
+  const { theme, loaded: themeModeLoaded } = useThemeMode();
+
   const [apolloClient, setApolloClient] =
     useState<ApolloClient<NormalizedCacheObject>>();
   const [isUserInitialized, setUserInitialized] = useState(false);
@@ -33,7 +36,8 @@ const useConnect = () => {
 
   return {
     apolloClient,
-    ready: isUserInitialized && isApolloInitialized,
+    theme,
+    ready: isUserInitialized && isApolloInitialized && themeModeLoaded,
   };
 };
 

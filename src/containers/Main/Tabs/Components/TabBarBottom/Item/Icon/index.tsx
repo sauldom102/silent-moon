@@ -1,17 +1,25 @@
 import React, { FC, memo } from 'react';
-import { PlusIcon } from 'components/Icons';
-import theme from 'theme';
+import {
+  HomeIcon,
+  MeditateIcon,
+  MusicIcon,
+  ProfileIcon,
+  SleepIcon,
+} from 'components';
+import { colors } from 'theme';
+import { Container } from './styles';
 import { Props } from './types';
 
 const Icon: FC<Props> = ({ icon, focused }) => {
-  const color = focused ? theme.colors.red : theme.colors.black;
+  const color = focused ? colors.white : '#A0A3B1';
   return (
-    <>
-      {icon === 'Home' && <PlusIcon color={color} />}
-      {icon === 'Feed' && <PlusIcon color={color} />}
-      {icon === 'Alerts' && <PlusIcon color={color} />}
-      {icon === 'Discover' && <PlusIcon color={color} />}
-    </>
+    <Container focused={focused}>
+      {icon === 'Home' && <HomeIcon color={color} />}
+      {icon === 'Sleep' && <SleepIcon color={color} />}
+      {icon === 'Meditate' && <MeditateIcon color={color} />}
+      {icon === 'Music' && <MusicIcon color={color} />}
+      {icon === 'Profile' && <ProfileIcon color={color} />}
+    </Container>
   );
 };
 

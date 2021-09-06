@@ -1,7 +1,16 @@
 import React, { FC } from 'react';
+import { Platform } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Welcome, Login, SignUp, Tabs } from 'containers';
-import { generalStackScreenOptions } from './constants';
+import {
+  Front,
+  Login,
+  SignUp,
+  Tabs,
+  Welcome,
+  ChooseTopic,
+  SleepWelcome,
+} from 'containers';
+import { stackScreenOptions, modalsStackOptions } from './constants';
 import { Props } from './types';
 
 const RootStack = createNativeStackNavigator();
@@ -10,10 +19,10 @@ const GuestStack = createNativeStackNavigator();
 
 const Guest = () => (
   <GuestStack.Navigator
-    screenOptions={generalStackScreenOptions}
-    initialRouteName="Welcome"
+    screenOptions={stackScreenOptions}
+    initialRouteName="Front"
   >
-    <GuestStack.Screen name="Welcome" component={Welcome} />
+    <GuestStack.Screen name="Front" component={Front} />
     <GuestStack.Screen name="SignUp" component={SignUp} />
     <GuestStack.Screen name="Login" component={Login} />
   </GuestStack.Navigator>
@@ -21,22 +30,28 @@ const Guest = () => (
 
 const Main = () => (
   <MainStack.Navigator
-    screenOptions={generalStackScreenOptions}
+    screenOptions={stackScreenOptions}
     initialRouteName="Tabs"
   >
     <MainStack.Screen name="Tabs" component={Tabs} />
+    <MainStack.Screen name="Welcome" component={Welcome} />
+    <MainStack.Screen name="ChooseTopic" component={ChooseTopic} />
   </MainStack.Navigator>
 );
 
 const Navigator: FC<Props> = () => {
   const ready = true;
   return (
-    <RootStack.Navigator screenOptions={generalStackScreenOptions}>
+    <RootStack.Navigator
+      mode={Platform.OS === 'android' ? 'modal' : undefined}
+      screenOptions={modalsStackOptions}
+    >
       {ready ? (
         <RootStack.Screen name="Main" component={Main} />
       ) : (
         <RootStack.Screen name="Guest" component={Guest} />
       )}
+      <RootStack.Screen name="SleepWelcome" component={SleepWelcome} />
     </RootStack.Navigator>
   );
 };

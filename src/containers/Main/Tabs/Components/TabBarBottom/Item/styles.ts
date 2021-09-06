@@ -1,31 +1,25 @@
-import styled, { css } from 'styled-components/native';
+import styled from 'styled-components/native';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import Text from 'components/Text';
 import { LabelProps } from './types';
 
 export const Container = styled.View`
-  flex: 1;
+  align-items: center;
 `;
 
 export const Content = styled(BorderlessButton).attrs(() => ({
   activeOpacity: 1,
 }))`
-  flex: 1;
   align-items: center;
   justify-content: center;
 `;
 
-const focusedLabelStyles = css`
-  color: ${({ theme }) => theme.colors.red};
-`;
-
 export const Label = styled(Text).attrs(() => ({
-  family: undefined,
+  family: 'HelveticaNeue-Medium',
 }))<LabelProps>`
-  font-size: 12px;
-  line-height: 17px;
-  margin-top: 8px;
+  font-size: 14px;
+  margin-top: 5px;
   text-align: center;
-  color: ${({ theme }) => theme.colors.white};
-  ${({ focused }) => focused && focusedLabelStyles}
+  color: ${({ focused, theme }) =>
+    focused ? theme.colors.primary : '#A0A3B1'};
 `;

@@ -1,3 +1,10 @@
-export * from './Icons';
-export { default as Text } from './Text';
+export { default as AlreadyAction } from './AlreadyAction';
+export { default as Button } from './Button';
+export { default as HorizontalMusicCard } from './HorizontalMusicCard';
+export { default as Pulse } from './Pulse';
+export { default as RecommendedList } from './RecommendedList';
 export { default as StatusBar } from './StatusBar';
+export { default as Text } from './Text';
+export { default as TextButton } from './TextButton';
+export { default as TitleSubtitle } from './TitleSubtitle';
+export * from './Icons';

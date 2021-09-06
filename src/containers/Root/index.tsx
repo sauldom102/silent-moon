@@ -1,12 +1,10 @@
 import React, { FC } from 'react';
-import { Platform, UIManager } from 'react-native';
+import { Platform, UIManager, StatusBar } from 'react-native';
 import { ApolloProvider } from '@apollo/client';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components';
-import StatusBar from 'components/StatusBar';
 import Navigator from 'navigator';
-import theme from 'theme';
 import useConnect from './connect';
 import { Props } from './types';
 
@@ -18,7 +16,7 @@ if (
 }
 
 const Root: FC<Props> = () => {
-  const { apolloClient, ready } = useConnect();
+  const { apolloClient, theme, ready } = useConnect();
 
   if (!ready || !apolloClient) {
     // TODO: Add loading screen
@@ -28,7 +26,7 @@ const Root: FC<Props> = () => {
   return (
     <ApolloProvider client={apolloClient}>
       <ThemeProvider theme={theme}>
-        <StatusBar />
+        <StatusBar translucent />
         <SafeAreaProvider>
           <NavigationContainer>
             <Navigator />
