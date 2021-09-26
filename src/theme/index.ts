@@ -3,6 +3,8 @@ import { Dimensions, Platform } from 'react-native';
 import { ThemeContext } from 'styled-components';
 
 export const colors = {
+  title: '#3F414E',
+  subtitle: '#a1a4b2',
   background: '#fff',
   white: '#fff',
   black: '#000',
@@ -12,6 +14,8 @@ export const colors = {
 
 export const nightColors = {
   ...colors,
+  title: '#E6E7F2',
+  subtitle: '#98A1BD',
   background: '#03174C',
 };
 
@@ -27,11 +31,13 @@ export const device = {
 const theme = {
   colors,
   device,
+  isNightMode: false,
 };
 
 export const nightTheme = {
   ...theme,
   colors: nightColors,
+  isNightMode: true,
 };
 
 export type Theme = typeof theme;

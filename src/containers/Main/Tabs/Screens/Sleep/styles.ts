@@ -1,14 +1,12 @@
-import { FlatList } from 'react-native';
 import styled from 'styled-components/native';
-import { ListProps } from './types';
+import { StoryList } from 'components';
 
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-export const List = styled(
-  FlatList as new () => FlatList<any>,
-).attrs<ListProps>({
-  contentContainerStyle: {},
-})<ListProps>``;
+export const List = styled(StoryList).attrs({
+  light: true,
+  type: 'vertical',
+})``;

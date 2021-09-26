@@ -6,14 +6,21 @@ import { Container, List } from './styles';
 import { Props } from './types';
 
 const Sleep: FC<Props> = () => {
-  const {} = useConnect();
+  const { items, handleOpenStoryItem, handlePressStoryType } = useConnect();
 
-  const handleRenderHeader = useCallback(() => <Header />, []);
+  const handleRenderHeader = useCallback(
+    () => <Header onPressStoryType={handlePressStoryType} />,
+    [handlePressStoryType],
+  );
 
   return (
     <Container>
       <StatusBar light />
-      <List data={[]} ListHeaderComponent={handleRenderHeader} />
+      <List
+        items={items}
+        ListHeaderComponent={handleRenderHeader}
+        onPressItem={handleOpenStoryItem}
+      />
     </Container>
   );
 };

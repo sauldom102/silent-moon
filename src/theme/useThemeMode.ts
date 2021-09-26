@@ -10,18 +10,21 @@ export const globalMode = createState<Mode>('day');
 const STORAGE_KEY = 'theme-mode';
 
 const useThemeMode = () => {
-  const { set, value: mode } = useGlobalState(globalMode);
+  const { set, value: mode, get } = useGlobalState(globalMode);
 
   const [loaded, setLoaded] = useState(false);
 
   const updateMode = useCallback(
     (newMode: Mode, update = true) => {
-      AsyncStorage.setItem(STORAGE_KEY, newMode);
-      if (update) {
-        set(newMode);
+      const m = get();
+      if (m !== newMode) {
+        AsyncStorage.setItem(STORAGE_KEY, newMode);
+        if (update) {
+          set(newMode);
+        }
       }
     },
-    [set],
+    [set, get],
   );
 
   const toggleMode = useCallback(() => {

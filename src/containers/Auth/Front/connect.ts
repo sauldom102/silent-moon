@@ -1,17 +1,20 @@
 import { useCallback } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import useThemeMode from 'theme/useThemeMode';
+import { Props } from './types';
 
 const useConnect = () => {
   const { bottom: safeBottom } = useSafeAreaInsets();
 
-  const { toggleMode } = useThemeMode();
+  const { navigate } = useNavigation<Props['navigation']>();
 
-  const handlePressLogin = useCallback(() => {}, []);
+  const handlePressLogin = useCallback(() => {
+    navigate('Login');
+  }, [navigate]);
 
   const handlePressSignUp = useCallback(() => {
-    toggleMode();
-  }, [toggleMode]);
+    navigate('SignUp');
+  }, [navigate]);
 
   return {
     handlePressLogin,

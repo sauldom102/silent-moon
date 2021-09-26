@@ -1,6 +1,6 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-export type Variant = 'primary' | 'secondary' | 'link';
+export type Variant = 'primary' | 'secondary' | 'link' | 'facebook' | 'google';
 
 export type Props = {
   title: string;
@@ -14,6 +14,8 @@ export type Props = {
 
 export type ContainerProps = {
   color: string;
+  borderColor?: string;
+  enabled: boolean;
 };
 
 export type TitleProps = {

@@ -1,6 +1,5 @@
-import flatten from 'lodash/flatten';
-import range from 'lodash/range';
 import uniqueId from 'lodash/uniqueId';
+import { STORY_ITEMS } from 'models/StoryItem';
 import { colors } from 'theme';
 
 export const ACTIVITY_CARDS = [
@@ -22,29 +21,6 @@ export const ACTIVITY_CARDS = [
   id: uniqueId(),
 }));
 
-const FOCUS_IMG = require('assets/images/music/focus.png');
-const HAPPINESS_IMG = require('assets/images/music/happiness.png');
-
-export const RECOMMENDED_MUSIC_CARDS = flatten(
-  range(5).map(() =>
-    [
-      {
-        title: 'Focus',
-        topic: 'Meditation',
-        duration: '3-10 min',
-        image: FOCUS_IMG,
-        color: '#AFDBC5',
-      },
-      {
-        title: 'Happiness',
-        topic: 'Meditation',
-        duration: '3-10 min',
-        image: HAPPINESS_IMG,
-        color: '#FBD89F',
-      },
-    ].map((c) => ({
-      ...c,
-      id: uniqueId(),
-    })),
-  ),
+export const RECOMMENDED_MUSIC_CARDS = STORY_ITEMS.filter(
+  (s) => s.topic === 'Meditation',
 );

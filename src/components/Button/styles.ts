@@ -5,10 +5,13 @@ import Text from 'components/Text';
 import { ContainerProps, TitleProps } from './types';
 
 export const Container = styled(View)<ContainerProps>`
-  height: 48px;
+  height: 54px;
   border-radius: 38px;
+  border-width: 1px;
+  border-color: ${({ borderColor, color }) => borderColor ?? color};
   background-color: ${({ color }) => color};
   overflow: hidden;
+  opacity: ${({ enabled }) => (enabled ? 1 : 0.75)};
 `;
 
 export const Main = styled(RectButton)`
@@ -20,6 +23,15 @@ export const Body = styled.View`
   justify-content: center;
   align-items: center;
   height: 100%;
+`;
+
+export const Left = styled.View`
+  position: absolute;
+  left: 28px;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Title = styled(Text).attrs<TitleProps>({

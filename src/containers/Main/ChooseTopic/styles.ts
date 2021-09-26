@@ -4,7 +4,7 @@ import { FlatGridProps } from './types';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 export const FlatGrid = styled(BaseFlatGrid).attrs<FlatGridProps>(

@@ -19,6 +19,7 @@
 		3E9AEEE826653C0D00723F6E /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9AEEE726653C0D00723F6E /* File.swift */; };
 		427319F4A7C2450A908BF104 /* HelveticaNeue-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5079BF9801874990A9850A14 /* HelveticaNeue-MediumItalic.ttf */; };
 		47E16A08231A430DA88DBA68 /* HelveticaNeue-UltraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71205A4665D14451AD09210F /* HelveticaNeue-UltraLightItalic.ttf */; };
+		55424813474A4806AC142008 /* GaramondPremierPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 223670BBBEE543C6B2B73C33 /* GaramondPremierPro-Semibold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8B138BAD52FC4590BB89497C /* HelveticaNeue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFFC12CB6D0A4A0592446495 /* HelveticaNeue.ttf */; };
 		8F0D008AB623B1349C9987C6 /* libPods-silentmoon-silentmoonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABB537471B11640ECA539AC /* libPods-silentmoon-silentmoonTests.a */; };
@@ -54,6 +55,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = silentmoon/main.m; sourceTree = "<group>"; };
 		14FDB058776849848D413C25 /* HelveticaNeue-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-LightItalic.ttf"; path = "../assets/fonts/HelveticaNeue-LightItalic.ttf"; sourceTree = "<group>"; };
 		1ABB537471B11640ECA539AC /* libPods-silentmoon-silentmoonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-silentmoon-silentmoonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		223670BBBEE543C6B2B73C33 /* GaramondPremierPro-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GaramondPremierPro-Semibold.ttf"; path = "../assets/fonts/GaramondPremierPro-Semibold.ttf"; sourceTree = "<group>"; };
 		2E31952E7F6D4142A4DDC0CA /* HelveticaNeue-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-BoldItalic.ttf"; path = "../assets/fonts/HelveticaNeue-BoldItalic.ttf"; sourceTree = "<group>"; };
 		34FDD6E051A14C099497EBB1 /* HelveticaNeue-UltraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-UltraLight.ttf"; path = "../assets/fonts/HelveticaNeue-UltraLight.ttf"; sourceTree = "<group>"; };
 		3E9AEEE626653C0C00723F6E /* silentmoon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "silentmoon-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				34FDD6E051A14C099497EBB1 /* HelveticaNeue-UltraLight.ttf */,
 				71205A4665D14451AD09210F /* HelveticaNeue-UltraLightItalic.ttf */,
 				FFFC12CB6D0A4A0592446495 /* HelveticaNeue.ttf */,
+				223670BBBEE543C6B2B73C33 /* GaramondPremierPro-Semibold.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -314,6 +317,7 @@
 				193F0FF069E84DA3A162FC62 /* HelveticaNeue-UltraLight.ttf in Resources */,
 				47E16A08231A430DA88DBA68 /* HelveticaNeue-UltraLightItalic.ttf in Resources */,
 				8B138BAD52FC4590BB89497C /* HelveticaNeue.ttf in Resources */,
+				55424813474A4806AC142008 /* GaramondPremierPro-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

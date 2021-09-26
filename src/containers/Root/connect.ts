@@ -3,6 +3,7 @@ import { ApolloClient, NormalizedCacheObject } from '@apollo/client';
 import noop from 'lodash/noop';
 import RNBootSplash from 'react-native-bootsplash';
 import { setupApollo } from 'apollo';
+import { navigationRef } from 'navigator/service';
 import useThemeMode from 'theme/useThemeMode';
 
 const useConnect = () => {
@@ -38,6 +39,7 @@ const useConnect = () => {
     apolloClient,
     theme,
     ready: isUserInitialized && isApolloInitialized && themeModeLoaded,
+    navigationRef,
   };
 };
 

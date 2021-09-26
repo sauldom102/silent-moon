@@ -1,8 +1,15 @@
 import styled from 'styled-components/native';
-import { SleepHeader, TitleSubtitle as BaseTitleSubtitle } from 'components';
+import {
+  SleepHeader,
+  TitleSubtitle as BaseTitleSubtitle,
+  FilterList as BaseFilterList,
+} from 'components';
+import FeaturedStoryCard from '../FeaturedStoryCard';
 import { SafeProps } from './types';
 
-export const Container = styled.View``;
+export const Container = styled.View`
+  margin: 0 -20px 20px;
+`;
 
 export const Safe = styled.View<SafeProps>`
   height: ${({ safeTop }) => safeTop + 66}px;
@@ -23,4 +30,14 @@ export const Background = styled(SleepHeader).attrs(({ theme }) => ({
 }))`
   position: absolute;
   top: 20px;
+`;
+
+export const FilterList = styled(BaseFilterList).attrs({
+  light: true,
+})`
+  margin-top: 34px;
+`;
+
+export const FeaturedStory = styled(FeaturedStoryCard)`
+  margin: 30px 20px 0;
 `;

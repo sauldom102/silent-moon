@@ -6,5 +6,10 @@ export type Props = {
   topic: string;
   duration: string;
   onPress?: (id: string) => void;
+  light?: boolean;
   style?: ViewStyle;
+};
+
+export type LightProps = {
+  light: boolean;
 };

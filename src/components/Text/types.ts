@@ -3,6 +3,7 @@ import { TextProps } from 'react-native';
 
 // TODO: add more weights here if needed
 export type Fonts =
+  | 'Garamond Premier Pro Semibold'
   | 'HelveticaNeue'
   | 'HelveticaNeue-SemiBold'
   | 'HelveticaNeue-Medium'

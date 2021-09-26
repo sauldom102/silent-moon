@@ -8,6 +8,7 @@ const MusicCard: FC<Props> = ({
   topic,
   duration,
   onPress,
+  light = false,
   style,
 }) => {
   const handlePress = useCallback(() => {
@@ -18,11 +19,11 @@ const MusicCard: FC<Props> = ({
 
   return (
     <Container onPress={handlePress} style={style}>
-      <Main>
-        <Stains />
+      <Main light={light}>
+        <Stains light={light} />
         <Left>
-          <Title>{title}</Title>
-          <Subtitle>{`${topic} • ${duration}`}</Subtitle>
+          <Title light={light}>{title}</Title>
+          <Subtitle light={light}>{`${topic} • ${duration}`}</Subtitle>
         </Left>
       </Main>
     </Container>

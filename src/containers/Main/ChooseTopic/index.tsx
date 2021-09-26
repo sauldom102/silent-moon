@@ -1,7 +1,7 @@
 import React, { FC, useCallback } from 'react';
 import { StatusBar } from 'components';
+import { GRID_LAYOUT } from 'models';
 import useConnect from './connect';
-import { LAYOUTS } from './constants';
 import Header from './Header';
 import Item from './Item';
 import { Container, FlatGrid } from './styles';
@@ -34,7 +34,7 @@ const ChooseTopic: FC<Props> = () => {
       <StatusBar />
       <FlatGrid
         data={data}
-        layouts={{ 'layout-1': LAYOUTS }}
+        layouts={{ 'layout-1': GRID_LAYOUT }}
         ListHeaderComponent={Header}
         renderItemChildren={handleRenderItemChildren}
         safeTop={safeTop}

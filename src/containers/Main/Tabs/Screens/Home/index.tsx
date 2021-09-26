@@ -11,12 +11,17 @@ import {
   TopCards,
   ActivityCard,
   HorizontalMusicCard,
-  RecommendedList,
+  StoryList,
 } from './styles';
 import { Props } from './types';
 
 const Home: FC<Props> = () => {
-  const { safeTop, handlePressActivityCard } = useConnect();
+  const {
+    safeTop,
+    handlePressActivityCard,
+    handleOpenStoryItem,
+    handlePressDailyThought,
+  } = useConnect();
 
   return (
     <Container safeTop={safeTop}>
@@ -35,11 +40,14 @@ const Home: FC<Props> = () => {
           title="Daily Thought"
           topic="Meditation"
           duration="3-10 min"
+          onPress={handlePressDailyThought}
         />
       </Main>
-      <RecommendedList
+      <StoryList
         title="Recommended for you"
+        type="horizontal"
         items={RECOMMENDED_MUSIC_CARDS}
+        onPressItem={handleOpenStoryItem}
       />
     </Container>
   );

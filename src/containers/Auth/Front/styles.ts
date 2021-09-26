@@ -8,7 +8,7 @@ import { BodyProps } from './types';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 export const Body = styled.ScrollView.attrs<BodyProps>(

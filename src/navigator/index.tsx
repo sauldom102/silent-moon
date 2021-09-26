@@ -9,6 +9,10 @@ import {
   Welcome,
   ChooseTopic,
   SleepWelcome,
+  PlayOption,
+  Reminders,
+  MusicPlayer,
+  MusicTopic,
 } from 'containers';
 import { stackScreenOptions, modalsStackOptions } from './constants';
 import { Props } from './types';
@@ -36,6 +40,7 @@ const Main = () => (
     <MainStack.Screen name="Tabs" component={Tabs} />
     <MainStack.Screen name="Welcome" component={Welcome} />
     <MainStack.Screen name="ChooseTopic" component={ChooseTopic} />
+    <MainStack.Screen name="MusicTopic" component={MusicTopic} />
   </MainStack.Navigator>
 );
 
@@ -52,6 +57,9 @@ const Navigator: FC<Props> = () => {
         <RootStack.Screen name="Guest" component={Guest} />
       )}
       <RootStack.Screen name="SleepWelcome" component={SleepWelcome} />
+      <RootStack.Screen name="PlayOption" component={PlayOption} />
+      <RootStack.Screen name="Reminders" component={Reminders} />
+      <RootStack.Screen name="MusicPlayer" component={MusicPlayer} />
     </RootStack.Navigator>
   );
 };

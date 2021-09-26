@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import {
   LogoIcon as BaseLogoIcon,
   Text,
-  RecommendedList as BaseRecommendedList,
+  StoryList as BaseStoryList,
   HorizontalMusicCard as BaseHorizontalMusicCard,
 } from 'components';
 import BaseActivityCard from './ActivityCard';
@@ -59,6 +59,6 @@ export const HorizontalMusicCard = styled(BaseHorizontalMusicCard)`
   margin-top: 20px;
 `;
 
-export const RecommendedList = styled(BaseRecommendedList)`
+export const StoryList = styled(BaseStoryList)`
   margin-top: 40px;
 `;

@@ -16,7 +16,7 @@ if (
 }
 
 const Root: FC<Props> = () => {
-  const { apolloClient, theme, ready } = useConnect();
+  const { apolloClient, theme, ready, navigationRef } = useConnect();
 
   if (!ready || !apolloClient) {
     // TODO: Add loading screen
@@ -28,7 +28,7 @@ const Root: FC<Props> = () => {
       <ThemeProvider theme={theme}>
         <StatusBar translucent />
         <SafeAreaProvider>
-          <NavigationContainer>
+          <NavigationContainer ref={navigationRef}>
             <Navigator />
           </NavigationContainer>
         </SafeAreaProvider>

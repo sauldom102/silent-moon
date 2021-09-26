@@ -10,9 +10,7 @@ const TitleSubtitle: FC<Props> = ({
   titleStyle,
 }) => (
   <Container style={style}>
-    <Title light={light} style={titleStyle}>
-      {title}
-    </Title>
+    <Title style={titleStyle}>{title}</Title>
     <Subtitle light={light}>{subtitle}</Subtitle>
   </Container>
 );
