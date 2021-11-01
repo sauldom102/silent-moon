@@ -8,6 +8,7 @@ export type Props = {
   onPress?: () => void;
   loading?: boolean;
   enabled?: boolean;
+  passTouches?: boolean;
   style?: ViewStyle;
   titleStyle?: TextStyle;
 };

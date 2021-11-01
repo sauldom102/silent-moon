@@ -62,5 +62,6 @@ export const Button = styled(BaseButton).attrs<LightProps>(({ light }) => ({
   width: 70px;
   height: 35px;
   border-radius: 25px;
-  background-color: ${({ light }) => (light ? '#EBEAEC' : '#3F414E')}; ;
+  background-color: ${({ light }) => (light ? '#EBEAEC' : '#3F414E')};
+  border-color: ${({ light }) => (light ? '#EBEAEC' : '#3F414E')};
 `;

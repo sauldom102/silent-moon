@@ -7,11 +7,18 @@ const PlayButton: FC<Props> = ({
   onPress,
   playing = false,
   color = '#3F414E',
+  iconColor = '#fff',
   style,
 }) => (
   <Container onPress={onPress} style={style}>
     <Out color={color}>
-      <Main color={color}>{playing ? <PauseIcon /> : <PlayIcon />}</Main>
+      <Main color={color}>
+        {playing ? (
+          <PauseIcon color={iconColor} />
+        ) : (
+          <PlayIcon color={iconColor} />
+        )}
+      </Main>
     </Out>
   </Container>
 );

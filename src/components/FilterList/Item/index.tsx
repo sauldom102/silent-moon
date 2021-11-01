@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback } from 'react';
+import React, { FC, memo } from 'react';
 import {
   AllFilterIcon,
   HeartIcon,
@@ -7,6 +7,7 @@ import {
   SleepFilterIcon,
 } from 'components/Icons';
 import { colors } from 'theme';
+import { useIdCallback } from 'utils';
 import { Container, Main, Icon, Title } from './styles';
 import { Props } from './types';
 
@@ -22,11 +23,7 @@ const Item: FC<Props> = ({
     color: active ? colors.white : '#E6E7F2',
   };
 
-  const handlePress = useCallback(() => {
-    if (onPress) {
-      onPress(id);
-    }
-  }, [onPress, id]);
+  const handlePress = useIdCallback(onPress, id);
 
   return (
     <Container onPress={handlePress}>

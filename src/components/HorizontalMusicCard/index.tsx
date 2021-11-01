@@ -1,5 +1,14 @@
-import React, { FC, memo, useCallback } from 'react';
-import { Container, Main, Left, Stains, Title, Subtitle } from './styles';
+import React, { FC, memo } from 'react';
+import { useIdCallback } from 'utils';
+import {
+  Container,
+  Main,
+  Left,
+  Stains,
+  Title,
+  Subtitle,
+  PlayButton,
+} from './styles';
 import { Props } from './types';
 
 const MusicCard: FC<Props> = ({
@@ -11,11 +20,7 @@ const MusicCard: FC<Props> = ({
   light = false,
   style,
 }) => {
-  const handlePress = useCallback(() => {
-    if (onPress) {
-      onPress(id);
-    }
-  }, [onPress, id]);
+  const handlePress = useIdCallback(onPress, id);
 
   return (
     <Container onPress={handlePress} style={style}>
@@ -25,6 +30,7 @@ const MusicCard: FC<Props> = ({
           <Title light={light}>{title}</Title>
           <Subtitle light={light}>{`${topic} • ${duration}`}</Subtitle>
         </Left>
+        <PlayButton enabled={false} />
       </Main>
     </Container>
   );

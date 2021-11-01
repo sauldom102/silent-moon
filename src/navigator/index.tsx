@@ -13,7 +13,9 @@ import {
   Reminders,
   MusicPlayer,
   MusicTopic,
+  Course,
 } from 'containers';
+import { useLoggedIn } from 'utils';
 import { stackScreenOptions, modalsStackOptions } from './constants';
 import { Props } from './types';
 
@@ -45,13 +47,14 @@ const Main = () => (
 );
 
 const Navigator: FC<Props> = () => {
-  const ready = true;
+  const { isLoggedIn } = useLoggedIn();
+
   return (
     <RootStack.Navigator
       mode={Platform.OS === 'android' ? 'modal' : undefined}
       screenOptions={modalsStackOptions}
     >
-      {ready ? (
+      {isLoggedIn ? (
         <RootStack.Screen name="Main" component={Main} />
       ) : (
         <RootStack.Screen name="Guest" component={Guest} />
@@ -59,6 +62,7 @@ const Navigator: FC<Props> = () => {
       <RootStack.Screen name="SleepWelcome" component={SleepWelcome} />
       <RootStack.Screen name="PlayOption" component={PlayOption} />
       <RootStack.Screen name="Reminders" component={Reminders} />
+      <RootStack.Screen name="Course" component={Course} />
       <RootStack.Screen name="MusicPlayer" component={MusicPlayer} />
     </RootStack.Navigator>
   );

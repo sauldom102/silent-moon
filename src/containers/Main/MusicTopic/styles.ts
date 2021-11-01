@@ -6,11 +6,11 @@ export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-export const Header = styled(BaseHeader).attrs({
+export const Header = styled(BaseHeader).attrs(({ theme }) => ({
   leftIcon: 'back',
-  leftIconBackgroundColor: '#1F265E',
-  leftIconColor: '#E6E7F2',
-})``;
+  leftIconBackgroundColor: theme.isNightMode ? '#1F265E' : '#f2f2f2',
+  leftIconColor: theme.isNightMode ? '#E6E7F2' : '#3F414E',
+}))``;
 
 export const List = styled(StoryList).attrs({
   light: true,

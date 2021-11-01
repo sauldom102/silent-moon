@@ -1,13 +1,10 @@
 import { useCallback, useMemo } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { STORY_ITEMS } from 'models/StoryItem';
-import useThemeMode from 'theme/useThemeMode';
 import { useNavigationActions } from 'utils/hooks';
 import { Props } from './types';
 
 const useConnect = () => {
-  const { mode } = useThemeMode();
-
   const { navigate, canGoBack, goBack } = useNavigation<Props['navigation']>();
   const {
     params: { id },
@@ -42,7 +39,6 @@ const useConnect = () => {
   return {
     item,
     relatedItems,
-    isNightMode: mode === 'night',
     handlePressClose,
     handleOpenStoryItem,
     handlePressPlayButton,

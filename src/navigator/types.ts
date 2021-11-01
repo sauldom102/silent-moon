@@ -7,10 +7,14 @@ type PlayOptionParams = {
 
 type MusicPlayerParams = {
   id: string;
-  type: 'meditation' | 'story';
+  type: 'meditation' | 'story' | 'courseMusic';
 };
 
 type MusicTopicParams = {
+  id: string;
+};
+
+type CourseParams = {
   id: string;
 };
 
@@ -28,6 +32,7 @@ export type ScreensParams = {
   Reminders: undefined;
   MusicPlayer: MusicPlayerParams;
   MusicTopic: MusicTopicParams;
+  Course: CourseParams;
 };
 
 export interface MainStackScreenProps<ScreenName extends keyof ScreensParams> {

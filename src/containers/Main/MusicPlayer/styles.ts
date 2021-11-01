@@ -1,8 +1,7 @@
-import styled from 'styled-components/native';
-import BaseSlider from '@react-native-community/slider';
+import styled, { css } from 'styled-components/native';
 import FastImage from 'react-native-fast-image';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Header as BaseHeader, Text } from 'components';
+import { Header as BaseHeader, PlayerBar, Text } from 'components';
 import BasePlayButton from './PlayButton';
 
 export const Container = styled.ScrollView`
@@ -10,11 +9,12 @@ export const Container = styled.ScrollView`
 `;
 
 export const Header = styled(BaseHeader).attrs(({ theme }) => ({
-  leftIconBackgroundColor: theme.colors.white,
-  leftIconColor: '#3F414E',
-  leftButtonWithBorder: true,
-  rightIconsBackgroundColor: '#C4C5CA',
-  rightIconsColor: theme.colors.white,
+  leftIconBackgroundColor: theme.isNightMode ? '#1F265E' : '#F2F2F2',
+  leftIconColor: theme.isNightMode ? '#E6E7F2' : '#3F414E',
+  rightIconsBackgroundColor: theme.isNightMode
+    ? '#1F265E'
+    : 'rgba(3, 23, 76, 0.5)',
+  rightIconsColor: '#E6E7F2',
 }))``;
 
 export const Body = styled.View`
@@ -27,10 +27,21 @@ export const Top = styled.View`
   align-items: center;
 `;
 
-export const Image = styled(FastImage)`
+const imageSizing = css`
   width: 250px;
   aspect-ratio: 1;
   border-radius: 10px;
+`;
+
+export const Image = styled(FastImage)`
+  ${imageSizing}
+`;
+
+export const DefaultRect = styled.View`
+  ${imageSizing}
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(163, 171, 255, 0.5);
 `;
 
 export const Title = styled(Text).attrs({
@@ -59,19 +70,34 @@ export const Controls = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 69px;
+  margin-top: 40px;
 `;
 
-export const PlayButton = styled(BasePlayButton)`
+export const PlayButton = styled(BasePlayButton).attrs(({ theme }) => ({
+  color: theme.colors.title,
+  iconColor: theme.colors.dynamicWhite,
+}))`
   margin: 0 50px;
 `;
 
 export const SideButton = styled(TouchableOpacity)``;
 
-export const Slider = styled(BaseSlider).attrs({
-  minimumTrackTintColor: '#3F414E',
-  maximumTrackTintColor: '#A0A3B1',
-  tapToSeek: true,
+export const Slider = styled(PlayerBar).attrs({
+  length: 1,
 })`
-  margin: 20px 40px 0;
+  margin: 52px 40px 0;
+`;
+
+export const Bottom = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 20px 0;
+`;
+
+export const Time = styled(Text).attrs({
+  family: 'HelveticaNeue-Medium',
+})`
+  font-size: 16px;
+  color: ${({ theme }) => theme.colors.title};
 `;

@@ -1,5 +1,5 @@
 import React, { FC, memo } from 'react';
-import { LikeIcon, ListenIcon } from 'components';
+import { LikeIcon, ListenIcon } from 'components/Icons';
 import { Container, Icon, Title } from './styles';
 import { Props } from './types';
 

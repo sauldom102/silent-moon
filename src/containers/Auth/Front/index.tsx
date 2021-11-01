@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { StatusBar } from 'components';
 import useConnect from './connect';
 import Header from './Header';
 import {
@@ -16,6 +17,7 @@ const Front: FC<Props> = () => {
 
   return (
     <Container>
+      <StatusBar />
       <Body safeBottom={safeBottom}>
         <Header />
         <TitleSubtitle

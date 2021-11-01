@@ -46,37 +46,37 @@
 		00E356EE1AD99517003FC87E /* silentmoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = silentmoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* silentmoonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = silentmoonTests.m; sourceTree = "<group>"; };
-		06481DA4E6E64ECCAD6A249D /* HelveticaNeue-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-Light.ttf"; path = "../assets/fonts/HelveticaNeue-Light.ttf"; sourceTree = "<group>"; };
+		06481DA4E6E64ECCAD6A249D /* HelveticaNeue-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-Light.ttf"; path = "../assets/fonts/HelveticaNeue-Light.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* silentmoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = silentmoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = silentmoon/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = silentmoon/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = silentmoon/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = silentmoon/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = silentmoon/main.m; sourceTree = "<group>"; };
-		14FDB058776849848D413C25 /* HelveticaNeue-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-LightItalic.ttf"; path = "../assets/fonts/HelveticaNeue-LightItalic.ttf"; sourceTree = "<group>"; };
+		14FDB058776849848D413C25 /* HelveticaNeue-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-LightItalic.ttf"; path = "../assets/fonts/HelveticaNeue-LightItalic.ttf"; sourceTree = "<group>"; };
 		1ABB537471B11640ECA539AC /* libPods-silentmoon-silentmoonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-silentmoon-silentmoonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		223670BBBEE543C6B2B73C33 /* GaramondPremierPro-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GaramondPremierPro-Semibold.ttf"; path = "../assets/fonts/GaramondPremierPro-Semibold.ttf"; sourceTree = "<group>"; };
-		2E31952E7F6D4142A4DDC0CA /* HelveticaNeue-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-BoldItalic.ttf"; path = "../assets/fonts/HelveticaNeue-BoldItalic.ttf"; sourceTree = "<group>"; };
-		34FDD6E051A14C099497EBB1 /* HelveticaNeue-UltraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-UltraLight.ttf"; path = "../assets/fonts/HelveticaNeue-UltraLight.ttf"; sourceTree = "<group>"; };
+		223670BBBEE543C6B2B73C33 /* GaramondPremierPro-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GaramondPremierPro-Semibold.ttf"; path = "../assets/fonts/GaramondPremierPro-Semibold.ttf"; sourceTree = "<group>"; };
+		2E31952E7F6D4142A4DDC0CA /* HelveticaNeue-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-BoldItalic.ttf"; path = "../assets/fonts/HelveticaNeue-BoldItalic.ttf"; sourceTree = "<group>"; };
+		34FDD6E051A14C099497EBB1 /* HelveticaNeue-UltraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-UltraLight.ttf"; path = "../assets/fonts/HelveticaNeue-UltraLight.ttf"; sourceTree = "<group>"; };
 		3E9AEEE626653C0C00723F6E /* silentmoon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "silentmoon-Bridging-Header.h"; sourceTree = "<group>"; };
 		3E9AEEE726653C0D00723F6E /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = File.swift; path = ../File.swift; sourceTree = "<group>"; };
-		5079BF9801874990A9850A14 /* HelveticaNeue-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-MediumItalic.ttf"; path = "../assets/fonts/HelveticaNeue-MediumItalic.ttf"; sourceTree = "<group>"; };
-		5669DC6029B744B3BB9C867B /* HelveticaNeue-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-Medium.ttf"; path = "../assets/fonts/HelveticaNeue-Medium.ttf"; sourceTree = "<group>"; };
+		5079BF9801874990A9850A14 /* HelveticaNeue-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-MediumItalic.ttf"; path = "../assets/fonts/HelveticaNeue-MediumItalic.ttf"; sourceTree = "<group>"; };
+		5669DC6029B744B3BB9C867B /* HelveticaNeue-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-Medium.ttf"; path = "../assets/fonts/HelveticaNeue-Medium.ttf"; sourceTree = "<group>"; };
 		5676F42882B1B43611FD7D98 /* Pods-silentmoon-silentmoonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silentmoon-silentmoonTests.debug.xcconfig"; path = "Target Support Files/Pods-silentmoon-silentmoonTests/Pods-silentmoon-silentmoonTests.debug.xcconfig"; sourceTree = "<group>"; };
-		71205A4665D14451AD09210F /* HelveticaNeue-UltraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-UltraLightItalic.ttf"; path = "../assets/fonts/HelveticaNeue-UltraLightItalic.ttf"; sourceTree = "<group>"; };
-		73272E6798514705B0887D39 /* HelveticaNeue-CondensedBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-CondensedBold.ttf"; path = "../assets/fonts/HelveticaNeue-CondensedBold.ttf"; sourceTree = "<group>"; };
+		71205A4665D14451AD09210F /* HelveticaNeue-UltraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-UltraLightItalic.ttf"; path = "../assets/fonts/HelveticaNeue-UltraLightItalic.ttf"; sourceTree = "<group>"; };
+		73272E6798514705B0887D39 /* HelveticaNeue-CondensedBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-CondensedBold.ttf"; path = "../assets/fonts/HelveticaNeue-CondensedBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = silentmoon/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		84FD41C2949D46AAB8DED1E9 /* HelveticaNeue-CondensedBlack.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-CondensedBlack.ttf"; path = "../assets/fonts/HelveticaNeue-CondensedBlack.ttf"; sourceTree = "<group>"; };
+		84FD41C2949D46AAB8DED1E9 /* HelveticaNeue-CondensedBlack.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-CondensedBlack.ttf"; path = "../assets/fonts/HelveticaNeue-CondensedBlack.ttf"; sourceTree = "<group>"; };
 		9281E0990BB8381C49AFC7B4 /* Pods-silentmoon-silentmoonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silentmoon-silentmoonTests.release.xcconfig"; path = "Target Support Files/Pods-silentmoon-silentmoonTests/Pods-silentmoon-silentmoonTests.release.xcconfig"; sourceTree = "<group>"; };
 		9A68CF0551D12D0188405C36 /* Pods-silentmoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silentmoon.release.xcconfig"; path = "Target Support Files/Pods-silentmoon/Pods-silentmoon.release.xcconfig"; sourceTree = "<group>"; };
 		ABFE209F45451030687CC37E /* Pods-silentmoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silentmoon.debug.xcconfig"; path = "Target Support Files/Pods-silentmoon/Pods-silentmoon.debug.xcconfig"; sourceTree = "<group>"; };
-		C8D696690B494DD5B2C49FB9 /* HelveticaNeue-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-ThinItalic.ttf"; path = "../assets/fonts/HelveticaNeue-ThinItalic.ttf"; sourceTree = "<group>"; };
+		C8D696690B494DD5B2C49FB9 /* HelveticaNeue-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-ThinItalic.ttf"; path = "../assets/fonts/HelveticaNeue-ThinItalic.ttf"; sourceTree = "<group>"; };
 		D1E75BFC3C6A58AFF117632D /* libPods-silentmoon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-silentmoon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D66BAD458B8348338AEB8B88 /* HelveticaNeue-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-Italic.ttf"; path = "../assets/fonts/HelveticaNeue-Italic.ttf"; sourceTree = "<group>"; };
-		DF81476B08D9440EA13F3611 /* HelveticaNeue-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-Bold.ttf"; path = "../assets/fonts/HelveticaNeue-Bold.ttf"; sourceTree = "<group>"; };
-		ECB194A12EF14966AE017EC8 /* HelveticaNeue-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-Thin.ttf"; path = "../assets/fonts/HelveticaNeue-Thin.ttf"; sourceTree = "<group>"; };
+		D66BAD458B8348338AEB8B88 /* HelveticaNeue-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-Italic.ttf"; path = "../assets/fonts/HelveticaNeue-Italic.ttf"; sourceTree = "<group>"; };
+		DF81476B08D9440EA13F3611 /* HelveticaNeue-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-Bold.ttf"; path = "../assets/fonts/HelveticaNeue-Bold.ttf"; sourceTree = "<group>"; };
+		ECB194A12EF14966AE017EC8 /* HelveticaNeue-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "HelveticaNeue-Thin.ttf"; path = "../assets/fonts/HelveticaNeue-Thin.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FFFC12CB6D0A4A0592446495 /* HelveticaNeue.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = HelveticaNeue.ttf; path = ../assets/fonts/HelveticaNeue.ttf; sourceTree = "<group>"; };
+		FFFC12CB6D0A4A0592446495 /* HelveticaNeue.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = HelveticaNeue.ttf; path = ../assets/fonts/HelveticaNeue.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,6 @@
 				223670BBBEE543C6B2B73C33 /* GaramondPremierPro-Semibold.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -559,8 +558,10 @@
 			baseConfigurationReference = ABFE209F45451030687CC37E /* Pods-silentmoon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8H95XKLMTW;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = silentmoon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -573,7 +574,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sauldominguez.silentmoon;
 				PRODUCT_NAME = silentmoon;
 				SWIFT_OBJC_BRIDGING_HEADER = "silentmoon-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -587,8 +588,10 @@
 			baseConfigurationReference = 9A68CF0551D12D0188405C36 /* Pods-silentmoon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8H95XKLMTW;
 				INFOPLIST_FILE = silentmoon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -600,7 +603,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sauldominguez.silentmoon;
 				PRODUCT_NAME = silentmoon;
 				SWIFT_OBJC_BRIDGING_HEADER = "silentmoon-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

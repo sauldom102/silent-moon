@@ -7,6 +7,7 @@ export const colors = {
   subtitle: '#a1a4b2',
   background: '#fff',
   white: '#fff',
+  dynamicWhite: '#fff',
   black: '#000',
   primary: '#8E97FD',
   transparent: 'rgba(0,0,0,0)',
@@ -17,6 +18,7 @@ export const nightColors = {
   title: '#E6E7F2',
   subtitle: '#98A1BD',
   background: '#03174C',
+  dynamicWhite: '#3F414E',
 };
 
 const { width, height } = Dimensions.get('window');

@@ -1,13 +1,11 @@
 import { useEffect, useCallback, useState, useMemo } from 'react';
 import { createState, useState as useGlobalState } from '@hookstate/core';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import defaultTheme, { nightTheme } from 'theme';
+import { getThemeMode, setThemeMode } from 'utils/storage';
 
 type Mode = 'day' | 'night';
 
 export const globalMode = createState<Mode>('day');
-
-const STORAGE_KEY = 'theme-mode';
 
 const useThemeMode = () => {
   const { set, value: mode, get } = useGlobalState(globalMode);
@@ -18,7 +16,7 @@ const useThemeMode = () => {
     (newMode: Mode, update = true) => {
       const m = get();
       if (m !== newMode) {
-        AsyncStorage.setItem(STORAGE_KEY, newMode);
+        setThemeMode(newMode);
         if (update) {
           set(newMode);
         }
@@ -31,8 +29,8 @@ const useThemeMode = () => {
     set(mode === 'day' ? 'night' : 'day');
   }, [set, mode]);
 
-  const handleInit = useCallback(async () => {
-    const cachedMode = (await AsyncStorage.getItem(STORAGE_KEY)) as Mode;
+  const handleInit = useCallback(() => {
+    const cachedMode = getThemeMode();
     if (cachedMode && mode !== cachedMode) {
       set(cachedMode);
     }

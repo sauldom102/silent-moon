@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components/native';
 import FastImage from 'react-native-fast-image';
-import { Text, Button as BaseButton, Header as BaseHeader } from 'components';
+import { Button as BaseButton, Header as BaseHeader } from 'components';
 import { device } from 'theme';
-import BaseLabeledIcon from './LabeledIcon';
 import { ColorProps } from './types';
 
 const IMAGE_HEIGHT = device.width * (290 / 414);
@@ -47,48 +46,6 @@ export const Body = styled.View`
   padding: 30px 0 20px;
   margin-top: ${IMAGE_HEIGHT - (55 + 8 + 12 + 20)}px;
   ${topBorders}
-`;
-
-export const Main = styled.View`
-  padding: 0 20px;
-`;
-
-export const Title = styled(Text).attrs({
-  family: 'HelveticaNeue-Bold',
-})`
-  font-size: 34px;
-  line-height: 42px;
-  color: ${({ theme }) => theme.colors.title};
-`;
-
-export const Topic = styled(Text).attrs({
-  family: 'HelveticaNeue-Medium',
-})`
-  font-size: 14px;
-  line-height: 15px;
-  letter-spacing: 0.7px;
-  color: ${({ theme }) => theme.colors.subtitle};
-  text-transform: uppercase;
-  margin-top: 16px;
-`;
-
-export const Description = styled(Text).attrs({
-  family: 'HelveticaNeue-Light',
-})`
-  font-size: 16px;
-  line-height: 23px;
-  color: ${({ theme }) => theme.colors.subtitle};
-  margin-top: 20px;
-`;
-
-export const Info = styled.View`
-  flex-direction: row;
-  align-items: center;
-  margin-top: 30px;
-`;
-
-export const LabeledIcon = styled(BaseLabeledIcon)`
-  margin-right: 40px;
 `;
 
 export const Separator = styled.View`

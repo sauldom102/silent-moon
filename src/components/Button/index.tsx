@@ -9,6 +9,7 @@ const Button: FC<Props> = ({
   variant = 'primary',
   onPress,
   enabled = true,
+  passTouches = false,
   style,
   titleStyle,
 }) => {
@@ -24,6 +25,7 @@ const Button: FC<Props> = ({
       color={backgroundColor}
       borderColor={borderColor}
       enabled={enabled}
+      pointerEvents={passTouches ? 'none' : undefined}
       style={style}
     >
       <Main onPress={onPress} enabled={enabled}>

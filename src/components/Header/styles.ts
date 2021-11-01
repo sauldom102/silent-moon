@@ -25,5 +25,5 @@ export const Title = styled(Text).attrs({
   family: 'HelveticaNeue-Bold',
 })`
   font-size: 24px;
-  color: #e6e7f2;
+  color: ${({ theme }) => theme.colors.title};
 `;

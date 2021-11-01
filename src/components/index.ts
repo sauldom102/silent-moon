@@ -1,6 +1,7 @@
 export { default as AlreadyAction } from './AlreadyAction';
 export { default as AuthFormHeader } from './AuthFormHeader';
 export { default as Button } from './Button';
+export { default as ContentHeader } from './ContentHeader';
 export { default as DatePicker } from './DatePicker';
 export { default as FilterList } from './FilterList';
 export { default as FormDatePicker } from './FormDatePicker';
@@ -9,7 +10,9 @@ export { default as FormWeekDayPicker } from './FormWeekDayPicker';
 export { default as Header } from './Header';
 export { default as HorizontalMusicCard } from './HorizontalMusicCard';
 export { default as IconButton } from './IconButton';
+export { default as PlayerBar } from './PlayerBar';
 export { default as Pulse } from './Pulse';
+export { default as SmallPlayButton } from './SmallPlayButton';
 export { default as StatusBar } from './StatusBar';
 export { default as StoryCard } from './StoryCard';
 export { default as StoryList } from './StoryList';

@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import styled from 'styled-components/native';
-import { Text } from 'components';
+import Text from 'components/Text';
 import { TitleProps } from './types';
 
 export const Container = styled(View)`

@@ -12,6 +12,7 @@ export { default as LogoIcon } from './LogoIcon';
 export { default as MeditatingWomanIcon } from './MeditatingWomanIcon';
 export { default as PauseIcon } from './PauseIcon';
 export { default as PlayIcon } from './PlayIcon';
+export { default as ReducedLogoIcon } from './ReducedLogoIcon';
 export { default as SleepHeader } from './SleepHeader';
 export { default as WelcomeFooter } from './WelcomeFooter';
 export { default as WelcomeIllustration } from './WelcomeIllustration';

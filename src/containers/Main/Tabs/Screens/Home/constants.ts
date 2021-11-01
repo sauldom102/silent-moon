@@ -1,24 +1,21 @@
 import uniqueId from 'lodash/uniqueId';
+import { COURSES } from 'models/Course';
 import { STORY_ITEMS } from 'models/StoryItem';
-import { colors } from 'theme';
 
 export const ACTIVITY_CARDS = [
-  {
-    title: 'Basics',
+  ...COURSES.map((c) => ({
+    ...c,
     topic: 'Course',
-    color: colors.primary,
-    duration: ' 3-10 min',
-    light: true,
-  },
+  })),
   {
     title: 'Relaxation',
     topic: 'Music',
-    color: '#FFDB9D',
+    color: '#FFC97E',
     duration: ' 3-10 min',
   },
 ].map((a) => ({
   ...a,
-  id: uniqueId(),
+  id: 'id' in a ? a.id : uniqueId(),
 }));
 
 export const RECOMMENDED_MUSIC_CARDS = STORY_ITEMS.filter(

@@ -1,5 +1,6 @@
-import React, { FC, memo, useCallback } from 'react';
+import React, { FC, memo } from 'react';
 import { useLayout } from '@react-native-community/hooks';
+import { useIdCallback } from 'utils';
 import {
   Container,
   Main,
@@ -24,11 +25,7 @@ const ActivityCard: FC<Props> = ({
 }) => {
   const { onLayout, width } = useLayout();
 
-  const handlePress = useCallback(() => {
-    if (onPress) {
-      onPress(id);
-    }
-  }, [onPress, id]);
+  const handlePress = useIdCallback(onPress, id);
 
   const height = (210 * width) / 177;
 
@@ -41,7 +38,7 @@ const ActivityCard: FC<Props> = ({
         </Body>
         <Bottom>
           <Duration light={light}>{duration}</Duration>
-          <Button title="Start" enabled={false} light={light} />
+          <Button title="Start" light={light} passTouches />
         </Bottom>
       </Main>
     </Container>

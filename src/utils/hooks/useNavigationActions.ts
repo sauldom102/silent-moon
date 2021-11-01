@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import StoryItem from 'models/StoryItem';
-import { navigate } from 'navigator/service';
+import { push } from 'navigator/service';
 import useThemeMode from 'theme/useThemeMode';
 
 const useNavigationActions = () => {
@@ -9,7 +9,7 @@ const useNavigationActions = () => {
   const handleOpenStoryItem = useCallback(
     (id: string, topic: StoryItem['topic']) => {
       updateMode(topic === 'Sleep Music' ? 'night' : 'day');
-      navigate('PlayOption', {
+      push('PlayOption', {
         id,
       });
     },

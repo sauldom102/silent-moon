@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 import { HorizontalStains } from 'components/Icons';
+import SmallPlayButton from 'components/SmallPlayButton';
 import Text from 'components/Text';
 import { LightProps } from './types';
 
@@ -59,3 +60,7 @@ export const Subtitle = styled(Text).attrs<LightProps>({
   text-transform: uppercase;
   margin-top: 10px;
 `;
+
+export const PlayButton = styled(SmallPlayButton).attrs({
+  variant: 'light',
+})``;

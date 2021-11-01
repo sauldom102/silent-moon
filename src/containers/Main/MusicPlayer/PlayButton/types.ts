@@ -4,6 +4,7 @@ export type Props = {
   onPress?: () => void;
   playing?: boolean;
   color?: string;
+  iconColor?: string;
   style?: ViewStyle;
 };
 

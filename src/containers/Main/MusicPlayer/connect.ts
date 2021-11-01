@@ -1,5 +1,6 @@
-import { useCallback, useState, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { COURSE_MUSIC_ITEMS } from 'models/CourseMusic';
 import { MEDITATION_ITEMS } from 'models/MeditationItem';
 import { STORY_ITEMS } from 'models/StoryItem';
 import useThemeMode from 'theme/useThemeMode';
@@ -21,10 +22,14 @@ const useConnect = () => {
     if (type === 'story') {
       return STORY_ITEMS.find((it) => it.id === id);
     }
+    if (type === 'courseMusic') {
+      return COURSE_MUSIC_ITEMS.find((it) => it.id === id);
+    }
     return undefined;
   }, [id, type]);
 
-  const { title, image } = item ?? {};
+  const { title } = item ?? {};
+  const image = item && 'image' in item ? item.image : undefined;
 
   const subtitle = useMemo(() => {
     if (type === 'meditation') {
@@ -36,25 +41,17 @@ const useConnect = () => {
     return undefined;
   }, [type]);
 
-  const [playing, setPlaying] = useState(false);
-
   const handlePressClose = useCallback(() => {
     if (canGoBack()) {
       goBack();
     }
   }, [canGoBack, goBack]);
 
-  const handleTogglePlay = useCallback(() => {
-    setPlaying((p) => !p);
-  }, []);
-
   return {
     handlePressClose,
-    playing,
     title,
     subtitle,
     image,
-    handleTogglePlay,
     isNightMode,
   };
 };
