@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
-import { ContentHeader, StatusBar, StoryList } from 'components';
+import { ContentHeader, StatusBar, StoryList, HeaderImage } from 'components';
 import useConnect from './connect';
 import {
   Container,
-  Image,
   Header,
   Scroll,
   Body,
@@ -17,6 +16,7 @@ const PlayOption: FC<Props> = () => {
   const {
     item,
     relatedItems,
+    safeBottom,
     handlePressClose,
     handleOpenStoryItem,
     handlePressPlayButton,
@@ -27,16 +27,16 @@ const PlayOption: FC<Props> = () => {
   }
 
   return (
-    <Container color={item.backgroundColor}>
+    <Container>
       <StatusBar light />
-      <Image source={item.image} color={item.backgroundColor} />
+      <HeaderImage source={item.image} color={item.backgroundColor} />
       <Header
         leftIcon="close"
         onPressLeft={handlePressClose}
         rightIcon="download"
         secondRightIcon="like"
       />
-      <Scroll>
+      <Scroll safeBottom={safeBottom}>
         <ExtraBottom />
         <Body>
           <ContentHeader

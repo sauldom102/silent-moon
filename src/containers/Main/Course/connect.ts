@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { COURSES } from 'models/Course';
 import useThemeMode from 'theme/useThemeMode';
 import { Props } from './types';
@@ -12,18 +13,23 @@ const useConnect = () => {
     params: { id },
   } = useRoute<Props['route']>();
 
+  const { bottom: safeBottom } = useSafeAreaInsets();
+
   const handlePressClose = useCallback(() => {
     if (canGoBack()) {
       goBack();
     }
   }, [canGoBack, goBack]);
 
-  const handlePressPlayButton = useCallback(() => {
-    navigate('MusicPlayer', {
-      id,
-      type: 'courseMusic',
-    });
-  }, [navigate, id]);
+  const handlePressPlayButton = useCallback(
+    (itemId: string) => {
+      navigate('MusicPlayer', {
+        id: itemId,
+        type: 'courseMusic',
+      });
+    },
+    [navigate],
+  );
 
   const item = useMemo(() => COURSES.find((s) => s.id === id), [id]);
 
@@ -32,6 +38,7 @@ const useConnect = () => {
     isNightMode: mode === 'night',
     handlePressClose,
     handlePressPlayButton,
+    safeBottom,
   };
 };
 

@@ -1,4 +1,5 @@
-import React, { FC, memo } from 'react';
+import React, { FC, memo, useEffect } from 'react';
+import { useLayout } from '@react-native-community/hooks';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import IconButton from 'components/IconButton';
 import { Container, Right, SecondRightIconButton, Title } from './styles';
@@ -17,12 +18,19 @@ const Header: FC<Props> = ({
   onPressSecondRight,
   rightIconsBackgroundColor,
   rightIconsColor,
+  onHeight,
   style,
 }) => {
   const { top: safeTop } = useSafeAreaInsets();
 
+  const { onLayout, height } = useLayout();
+
+  useEffect(() => {
+    onHeight?.(height);
+  }, [onHeight, height]);
+
   return (
-    <Container safeTop={safeTop} style={style}>
+    <Container onLayout={onLayout} safeTop={safeTop} style={style}>
       <IconButton
         icon={leftIcon}
         onPress={onPressLeft}

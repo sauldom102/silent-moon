@@ -58,7 +58,11 @@ const useLogic = ({ value, onChange, onPan }: LogicProps) => {
   });
 
   const selectorStyle = useAnimatedStyle(() => ({
-    transform: [{ translateX: x.value }],
+    transform: [
+      {
+        translateX: x.value,
+      },
+    ],
   }));
 
   const lineStyle = useAnimatedStyle(() => ({

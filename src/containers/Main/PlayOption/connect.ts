@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { STORY_ITEMS } from 'models/StoryItem';
 import { useNavigationActions } from 'utils/hooks';
 import { Props } from './types';
@@ -11,6 +12,8 @@ const useConnect = () => {
   } = useRoute<Props['route']>();
 
   const { handleOpenStoryItem } = useNavigationActions();
+
+  const { bottom: safeBottom } = useSafeAreaInsets();
 
   const handlePressClose = useCallback(() => {
     if (canGoBack()) {
@@ -39,6 +42,7 @@ const useConnect = () => {
   return {
     item,
     relatedItems,
+    safeBottom,
     handlePressClose,
     handleOpenStoryItem,
     handlePressPlayButton,

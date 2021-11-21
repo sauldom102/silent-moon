@@ -6,4 +6,5 @@ export type Props = {
   subtitle: string;
   image: Source;
   style?: ViewStyle;
+  onPress?: () => void;
 };

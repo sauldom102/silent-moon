@@ -15,11 +15,15 @@ export const Body = styled.ScrollView.attrs<BodyProps>(
   ({ theme, safeBottom }) => ({
     contentContainerStyle: {
       minHeight: theme.device.height,
-      justifyContent: 'space-between',
       paddingBottom: safeBottom + 20,
     },
+    alwaysBounceVertical: false,
   }),
 )<BodyProps>``;
+
+export const Main = styled.View`
+  margin-top: auto;
+`;
 
 export const TitleSubtitle = styled(BaseTitleSubtitle)`
   margin-top: 10px;

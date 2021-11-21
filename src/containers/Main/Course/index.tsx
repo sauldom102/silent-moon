@@ -1,11 +1,10 @@
 import React, { FC, useCallback } from 'react';
-import { ContentHeader, StatusBar } from 'components';
+import { ContentHeader, StatusBar, HeaderImage } from 'components';
 import { COURSE_MUSIC_ITEMS } from 'models/CourseMusic';
 import useConnect from './connect';
 import Item from './Item';
 import {
   Container,
-  Image,
   Header,
   Body,
   ExtraBottom,
@@ -17,7 +16,8 @@ import {
 import { Props, RenderItemProps } from './types';
 
 const Course: FC<Props> = () => {
-  const { item, handlePressClose, handlePressPlayButton } = useConnect();
+  const { item, handlePressClose, handlePressPlayButton, safeBottom } =
+    useConnect();
 
   const handleRenderHeader = useCallback(
     () => (
@@ -65,9 +65,9 @@ const Course: FC<Props> = () => {
   }
 
   return (
-    <Container color={item.color}>
+    <Container>
       <StatusBar light />
-      <Image source={item.image} color={item.color} />
+      <HeaderImage source={item.image} color={item.color} />
       <Header
         leftIcon="close"
         onPressLeft={handlePressClose}
@@ -79,6 +79,7 @@ const Course: FC<Props> = () => {
         ListHeaderComponent={handleRenderHeader}
         renderItem={handleRenderItem}
         ItemSeparatorComponent={handleRenderSeparator}
+        safeBottom={safeBottom}
       />
     </Container>
   );

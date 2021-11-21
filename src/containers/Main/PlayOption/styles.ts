@@ -1,31 +1,15 @@
 import styled, { css } from 'styled-components/native';
-import FastImage from 'react-native-fast-image';
 import { Button as BaseButton, Header as BaseHeader } from 'components';
-import { device } from 'theme';
-import { ColorProps } from './types';
-
-const IMAGE_HEIGHT = device.width * (290 / 414);
+import { ColorProps, ScrollProps } from './types';
 
 const topBorders = css`
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 `;
 
-export const Container = styled.View<ColorProps>`
+export const Container = styled.View`
   flex: 1;
-  background-color: ${({ color }) => color};
-`;
-
-export const Image = styled(FastImage).attrs<ColorProps>({
-  resizeMode: 'contain',
-})<ColorProps>`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: ${IMAGE_HEIGHT}px;
-  background-color: ${({ color }) => color};
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Header = styled(BaseHeader).attrs(({ theme }) => ({
@@ -37,14 +21,21 @@ export const Header = styled(BaseHeader).attrs(({ theme }) => ({
   rightIconsColor: '#E6E7F2',
 }))``;
 
-export const Scroll = styled.ScrollView`
+export const Scroll = styled.ScrollView.attrs<ScrollProps>(
+  ({ safeBottom }) => ({
+    contentContainerStyle: {
+      paddingBottom: safeBottom,
+    },
+  }),
+)<ScrollProps>`
   ${topBorders}
 `;
 
 export const Body = styled.View`
   background-color: ${({ theme }) => theme.colors.background};
   padding: 30px 0 20px;
-  margin-top: ${IMAGE_HEIGHT - (55 + 8 + 12 + 20)}px;
+  margin-top: ${({ theme }) =>
+    theme.sizes.headerImageHeight - (55 + 8 + 12 + 20)}px;
   ${topBorders}
 `;
 

@@ -19,7 +19,7 @@ const Header: FC<Props> = ({ onPressStoryType }) => {
   return (
     <Container>
       <Safe safeTop={safeTop} />
-      <Background />
+      <Background safeTop={safeTop} />
       <TitleSubtitle
         title="Sleep Stories"
         subtitle="Soothing bedtime stories to help you fall into a deep and natural sleep"

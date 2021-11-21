@@ -25,11 +25,11 @@ export const TitleSubtitle = styled(BaseTitleSubtitle).attrs({
   padding: 0 48px;
 `;
 
-export const Background = styled(SleepHeader).attrs(({ theme }) => ({
+export const Background = styled(SleepHeader).attrs<SafeProps>(({ theme }) => ({
   size: theme.device.width,
-}))`
+}))<SafeProps>`
   position: absolute;
-  top: 20px;
+  top: ${({ safeTop }) => safeTop + 20}px;
 `;
 
 export const FilterList = styled(BaseFilterList).attrs({

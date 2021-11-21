@@ -29,6 +29,7 @@ export const Body = styled.ScrollView.attrs<BodyProps>(({ safeBottom }) => ({
   contentContainerStyle: {
     paddingBottom: safeBottom + 20,
   },
+  alwaysBounceVertical: false,
 }))<BodyProps>``;
 
 export const Main = styled.View`

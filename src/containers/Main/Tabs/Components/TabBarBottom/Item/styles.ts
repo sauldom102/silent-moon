@@ -7,16 +7,16 @@ export const Container = styled.View`
   align-items: center;
 `;
 
-export const Content = styled(BorderlessButton).attrs(() => ({
+export const Content = styled(BorderlessButton).attrs({
   activeOpacity: 1,
-}))`
+})`
   align-items: center;
   justify-content: center;
 `;
 
-export const Label = styled(Text).attrs(() => ({
+export const Label = styled(Text).attrs({
   family: 'HelveticaNeue-Medium',
-}))<LabelProps>`
+})<LabelProps>`
   font-size: 14px;
   margin-top: 5px;
   text-align: center;

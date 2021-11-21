@@ -14,6 +14,7 @@ export const Container = styled.ScrollView.attrs<ContainerProps>(
       paddingHorizontal: 20,
       paddingBottom: 20 + safeBottom,
     },
+    alwaysBounceVertical: false,
   }),
 )<ContainerProps>`
   background-color: ${({ theme }) => theme.colors.white};

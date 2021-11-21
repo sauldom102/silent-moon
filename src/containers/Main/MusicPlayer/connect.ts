@@ -1,9 +1,11 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import { AUDIONATIX_URL } from 'config';
 import { COURSE_MUSIC_ITEMS } from 'models/CourseMusic';
 import { MEDITATION_ITEMS } from 'models/MeditationItem';
 import { STORY_ITEMS } from 'models/StoryItem';
 import useThemeMode from 'theme/useThemeMode';
+import { openWebLink } from 'utils';
 import { Props } from './types';
 
 const useConnect = () => {
@@ -11,6 +13,8 @@ const useConnect = () => {
   const {
     params: { id, type },
   } = useRoute<Props['route']>();
+
+  const [headerHeight, setHeaderHeight] = useState(0);
 
   const { mode } = useThemeMode();
   const isNightMode = mode === 'night';
@@ -30,6 +34,8 @@ const useConnect = () => {
 
   const { title } = item ?? {};
   const image = item && 'image' in item ? item.image : undefined;
+  const backgroundColor =
+    item && 'backgroundColor' in item ? item.backgroundColor : undefined;
 
   const subtitle = useMemo(() => {
     if (type === 'meditation') {
@@ -37,6 +43,9 @@ const useConnect = () => {
     }
     if (type === 'story') {
       return 'Story';
+    }
+    if (type === 'courseMusic') {
+      return 'Course';
     }
     return undefined;
   }, [type]);
@@ -47,13 +56,24 @@ const useConnect = () => {
     }
   }, [canGoBack, goBack]);
 
+  const handlePressCredits = useCallback(() => {
+    openWebLink(AUDIONATIX_URL);
+  }, []);
+
   return {
     handlePressClose,
     title,
     subtitle,
+    item,
     image,
+    backgroundColor,
     isNightMode,
+    headerHeight,
+    setHeaderHeight,
+    handlePressCredits,
   };
 };
+
+export type UseConnect = ReturnType<typeof useConnect>;
 
 export default useConnect;

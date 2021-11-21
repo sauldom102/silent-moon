@@ -13,6 +13,7 @@ export const STORY_ITEMS = [
     title: 'Focus',
     topic: 'Meditation',
     duration: '3-10 min',
+    uri: 'https://audionautix.com/Music/12Mornings.mp3',
     image: FOCUS_IMG,
     color: '#AFDBC5',
     backgroundColor: '#AFDBC5',
@@ -21,6 +22,7 @@ export const STORY_ITEMS = [
     title: 'Happiness',
     topic: 'Meditation',
     duration: '3-10 min',
+    uri: 'https://audionautix.com/Music/WheelOfKarma.mp3',
     image: HAPPINESS_IMG,
     color: '#FBD89F',
     backgroundColor: '#FBD89F',
@@ -29,21 +31,25 @@ export const STORY_ITEMS = [
     {
       title: 'Night Island',
       image: NIGHT_SLEEP_IMG,
+      uri: 'https://audionautix.com/Music/12Mornings.mp3',
       backgroundColor: '#4C53B4',
     },
     {
       title: 'Sweet Sleep',
       image: SWEET_SLEEP_IMG,
+      uri: 'https://audionautix.com/Music/12Mornings.mp3',
       backgroundColor: '#4C53B4',
     },
     {
       title: 'Good Night',
       image: MOON_CLOUDS_IMG,
+      uri: 'https://audionautix.com/Music/12Mornings.mp3',
       backgroundColor: '#3E476E',
     },
     {
       title: 'Moon Clouds',
       image: PINK_MOON_IMG,
+      uri: 'https://audionautix.com/Music/12Mornings.mp3',
       backgroundColor: '#554A96',
     },
   ].map((c) => ({

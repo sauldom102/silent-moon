@@ -17,29 +17,42 @@ import {
   Title,
   Subtitle,
   Controls,
+  Bottom,
   PlayButton,
   SideButton,
   Slider,
-  Bottom,
+  BottomTime,
   Time,
+  CreditsButton,
+  Credits,
 } from './styles';
 import { Props } from './types';
 
 const MusicPlayer: FC<Props> = () => {
-  const { handlePressClose, title, subtitle, image, isNightMode } =
-    useConnect();
+  const {
+    handlePressClose,
+    title,
+    subtitle,
+    item,
+    image,
+    backgroundColor,
+    isNightMode,
+    headerHeight,
+    setHeaderHeight,
+    handlePressCredits,
+  } = useConnect();
 
   const {
     displayCurrentTime,
     displayDuration,
     playing,
-    handleTogglePlay,
+    togglePlay,
     handleSliderChange,
     handleSlidePan,
     progress,
     handlePressBackwards,
     handlePressForward,
-  } = useLogic();
+  } = useLogic({ item, subtitle });
 
   return (
     <Container stickyHeaderIndices={[1]}>
@@ -49,11 +62,12 @@ const MusicPlayer: FC<Props> = () => {
         onPressLeft={handlePressClose}
         rightIcon="download"
         secondRightIcon="like"
+        onHeight={setHeaderHeight}
       />
-      <Body>
+      <Body headerHeight={headerHeight}>
         <Top>
           {image ? (
-            <Image source={image} />
+            <Image source={image} color={backgroundColor} />
           ) : (
             <DefaultRect>
               <ReducedLogoIcon size={100} />
@@ -62,24 +76,31 @@ const MusicPlayer: FC<Props> = () => {
           <Title>{title}</Title>
           {!!subtitle && <Subtitle>{subtitle}</Subtitle>}
         </Top>
-        <Controls>
-          <SideButton onPress={handlePressBackwards}>
-            <BackwardIcon />
-          </SideButton>
-          <PlayButton playing={playing} onPress={handleTogglePlay} />
-          <SideButton onPress={handlePressForward}>
-            <ForwardIcon />
-          </SideButton>
-        </Controls>
-        <Slider
-          value={progress}
-          onChange={handleSliderChange}
-          onPan={handleSlidePan}
-        />
         <Bottom>
-          <Time>{displayCurrentTime}</Time>
-          <Time>{displayDuration}</Time>
+          <Controls>
+            <SideButton onPress={handlePressBackwards}>
+              <BackwardIcon />
+            </SideButton>
+            <PlayButton playing={playing} onPress={togglePlay} />
+            <SideButton onPress={handlePressForward}>
+              <ForwardIcon />
+            </SideButton>
+          </Controls>
+          <Slider
+            value={progress}
+            onChange={handleSliderChange}
+            onPan={handleSlidePan}
+          />
+          <BottomTime>
+            <Time>{displayCurrentTime}</Time>
+            <Time>{displayDuration}</Time>
+          </BottomTime>
         </Bottom>
+        <CreditsButton onPress={handlePressCredits}>
+          <Credits>
+            Creative Commons Music by Jason Shaw on Audionautix.com
+          </Credits>
+        </CreditsButton>
       </Body>
     </Container>
   );

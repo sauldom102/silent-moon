@@ -9,6 +9,14 @@ export const Container = styled(View)`
   margin: 0 ${SELECTOR_SIZE / 2}px;
 `;
 
+export const SelectorWrapper = Animated.createAnimatedComponent(styled.View`
+  width: ${SELECTOR_SIZE + 64}px;
+  aspect-ratio: 1;
+  justify-content: center;
+  align-items: center;
+  margin: -32px;
+`);
+
 export const Selector = Animated.createAnimatedComponent(styled.View`
   width: ${SELECTOR_SIZE}px;
   aspect-ratio: 1;

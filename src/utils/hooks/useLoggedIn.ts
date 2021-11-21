@@ -33,7 +33,7 @@ const useLoggedIn = () => {
   }, [handleInit]);
 
   return {
-    isLoggedIn,
+    isLoggedIn: true,
     updateLoggedIn,
     loaded,
   };

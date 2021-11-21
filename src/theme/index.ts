@@ -30,9 +30,14 @@ export const device = {
   isAndroid: Platform.OS === 'android',
 };
 
+const sizes = {
+  headerImageHeight: width * (290 / 414),
+};
+
 const theme = {
   colors,
   device,
+  sizes,
   isNightMode: false,
 };
 

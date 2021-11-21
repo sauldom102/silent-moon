@@ -13,6 +13,7 @@ export type Props = {
   onPressSecondRight?: () => void;
   rightIconsBackgroundColor?: string;
   rightIconsColor?: string;
+  onHeight?: (height: number) => void;
   style?: ViewStyle;
 };
 

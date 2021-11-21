@@ -1,10 +1,16 @@
 import styled, { css } from 'styled-components/native';
 import FastImage from 'react-native-fast-image';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {
+  BorderlessButton,
+  TouchableOpacity,
+} from 'react-native-gesture-handler';
 import { Header as BaseHeader, PlayerBar, Text } from 'components';
 import BasePlayButton from './PlayButton';
+import { BodyProps, ImageProps } from './types';
 
-export const Container = styled.ScrollView`
+export const Container = styled.ScrollView.attrs({
+  alwaysBounceVertical: false,
+})`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
@@ -17,8 +23,10 @@ export const Header = styled(BaseHeader).attrs(({ theme }) => ({
   rightIconsColor: '#E6E7F2',
 }))``;
 
-export const Body = styled.View`
-  flex: 1;
+export const Body = styled.View<BodyProps>`
+  min-height: ${({ theme, headerHeight }) =>
+    theme.device.height - headerHeight}px;
+  justify-content: space-between;
   padding-top: 32px;
   padding-bottom: 40px;
 `;
@@ -33,8 +41,13 @@ const imageSizing = css`
   border-radius: 10px;
 `;
 
-export const Image = styled(FastImage)`
+export const Image = styled(FastImage)<ImageProps>`
   ${imageSizing}
+  ${({ color }) =>
+    color &&
+    css`
+      background-color: ${color};
+    `}
 `;
 
 export const DefaultRect = styled.View`
@@ -66,11 +79,16 @@ export const Subtitle = styled(Text).attrs({
   margin-top: 12px;
 `;
 
+export const Bottom = styled.View`
+  flex: 1;
+  justify-content: center;
+  margin-top: 40px;
+`;
+
 export const Controls = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
 `;
 
 export const PlayButton = styled(BasePlayButton).attrs(({ theme }) => ({
@@ -88,7 +106,7 @@ export const Slider = styled(PlayerBar).attrs({
   margin: 52px 40px 0;
 `;
 
-export const Bottom = styled.View`
+export const BottomTime = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -100,4 +118,14 @@ export const Time = styled(Text).attrs({
 })`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.title};
+`;
+
+export const CreditsButton = styled(BorderlessButton)`
+  margin-top: auto;
+`;
+
+export const Credits = styled(Text)`
+  font-size: 12px;
+  color: ${({ theme }) => theme.colors.subtitle};
+  text-align: center;
 `;

@@ -1,7 +1,13 @@
 import React, { FC, memo } from 'react';
 import { PanGestureHandler } from 'react-native-gesture-handler';
 import useLogic from './logic';
-import { Container, Selector, Line, LineBackground } from './styles';
+import {
+  Container,
+  SelectorWrapper,
+  Selector,
+  Line,
+  LineBackground,
+} from './styles';
 import { Props } from './types';
 
 const PlayerBar: FC<Props> = ({ value, onChange, onPan, style }) => {
@@ -16,7 +22,9 @@ const PlayerBar: FC<Props> = ({ value, onChange, onPan, style }) => {
       <LineBackground />
       <Line style={lineStyle} />
       <PanGestureHandler onGestureEvent={onGestureEvent}>
-        <Selector style={selectorStyle} />
+        <SelectorWrapper style={selectorStyle}>
+          <Selector />
+        </SelectorWrapper>
       </PanGestureHandler>
     </Container>
   );

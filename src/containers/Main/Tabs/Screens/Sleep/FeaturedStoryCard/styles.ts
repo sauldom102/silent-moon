@@ -1,14 +1,18 @@
-import { View } from 'react-native';
 import styled from 'styled-components/native';
 import FastImage from 'react-native-fast-image';
+import { RectButton } from 'react-native-gesture-handler';
+import Animated from 'react-native-reanimated';
 import { Text, Button as BaseButton } from 'components';
 
-export const Container = styled(View)`
+export const Container = Animated.createAnimatedComponent(styled(RectButton)``);
+
+export const Main = styled.View`
   justify-content: flex-end;
   align-items: center;
   height: ${({ theme }) => (233 / 373) * (theme.device.width - 40)}px;
   border-radius: 10px;
   overflow: hidden;
+  z-index: -1;
 `;
 
 export const Image = styled(FastImage).attrs({
@@ -44,6 +48,7 @@ export const Button = styled(BaseButton).attrs({
   titleStyle: {
     fontSize: 12,
   },
+  passTouches: true,
 })`
   width: 70px;
   height: 35px;

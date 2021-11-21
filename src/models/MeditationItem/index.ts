@@ -10,25 +10,29 @@ const HOW_TO_MEDITATE_IMG = require('assets/images/meditate/how-to-meditate.png'
 
 // eslint-disable-next-line import/prefer-default-export
 export const MEDITATION_ITEMS = flatten(
-  range(2).map(() => [
+  range(3).map(() => [
     {
       title: '7 Days of Calm',
       image: DAYS_OF_CALM_IMG,
+      uri: 'https://audionautix.com/Music/Namaste.mp3',
       layout: 'item-1',
     },
     {
       title: 'Anxiet Release',
       image: ANXIET_RELEASE_IMG,
+      uri: 'https://audionautix.com/Music/RunningWaters.mp3',
       layout: 'item-3',
     },
     {
       title: 'How to Meditate',
       image: HOW_TO_MEDITATE_IMG,
+      uri: 'https://audionautix.com/Music/12Mornings.mp3',
       layout: 'item-2',
     },
     {
       title: 'Focus Attention',
       image: FOCUS_ATTENTION_IMG,
+      uri: 'https://audionautix.com/Music/Ohm.mp3',
       layout: 'item-4',
     },
   ]),

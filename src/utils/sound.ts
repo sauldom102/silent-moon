@@ -3,7 +3,11 @@ import Sound, { setCategory, setActive } from 'react-native-sound';
 
 export const sound = createRef() as MutableRefObject<Sound>;
 
+export const playingSound = createRef() as MutableRefObject<Sound>;
+
 export const soundPath = createRef() as MutableRefObject<string>;
+
+export const playingSoundPath = createRef() as MutableRefObject<string>;
 
 type SetSoundResult = {
   existing: boolean;
@@ -42,9 +46,18 @@ export const setSound = (uri: string) => {
   });
 };
 
-export const playSound = (cb?: (success: boolean) => void) => {
+export const playSound = (uri: string, cb?: (success: boolean) => void) => {
   setCategory('Playback', false);
   setActive(true);
+
+  if (playingSound.current && soundPath.current !== playingSoundPath.current) {
+    playingSound.current.stop();
+    playingSound.current.release();
+  }
+
+  playingSound.current = sound.current;
+  playingSoundPath.current = uri;
+
   sound.current?.play((success: boolean) => {
     cb?.(success);
     sound.current?.stop();

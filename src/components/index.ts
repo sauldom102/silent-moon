@@ -8,6 +8,7 @@ export { default as FormDatePicker } from './FormDatePicker';
 export { default as FormTextInput } from './FormTextInput';
 export { default as FormWeekDayPicker } from './FormWeekDayPicker';
 export { default as Header } from './Header';
+export { default as HeaderImage } from './HeaderImage';
 export { default as HorizontalMusicCard } from './HorizontalMusicCard';
 export { default as IconButton } from './IconButton';
 export { default as PlayerBar } from './PlayerBar';

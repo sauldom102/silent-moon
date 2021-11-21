@@ -16,6 +16,7 @@ export const Title = styled(Text).attrs({
 
 export const List = styled(FlatList as new () => FlatList<Item>).attrs({
   indicatorStyle: 'white' as FlatListProps<Item>['indicatorStyle'],
+  alwaysBounceVertical: false as boolean,
 })``;
 
 export const HSeparator = styled.View`

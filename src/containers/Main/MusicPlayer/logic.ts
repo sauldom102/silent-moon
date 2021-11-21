@@ -1,9 +1,30 @@
 import { useEffect, useCallback, useRef, useState, useMemo } from 'react';
+import { useRoute } from '@react-navigation/native';
 import { useSharedValue } from 'react-native-reanimated';
-import { getMMSSFromSeconds } from 'utils';
+import {
+  getMMSSFromSeconds,
+  initMusicControls,
+  setMusicControlsEvents,
+  useCurrentPlaying,
+} from 'utils';
 import { sound, playSound, setSound } from 'utils/sound';
+import { UseConnect } from './connect';
+import { Props } from './types';
 
-const useLogic = () => {
+type UseLogicParams = {
+  item?: UseConnect['item'];
+  subtitle?: string;
+};
+
+const useLogic = ({ item, subtitle }: UseLogicParams) => {
+  const { uri } = item ?? {};
+
+  const { setCurrentPlaying } = useCurrentPlaying();
+
+  const { params } = useRoute<Props['route']>();
+
+  const setAsPlaying = useRef(false);
+
   const [playing, setPlaying] = useState<boolean>();
   const [displayDuration, setDisplayDuration] = useState('00:00');
 
@@ -22,16 +43,16 @@ const useLogic = () => {
 
   const interval = useRef<ReturnType<typeof setInterval>>();
 
-  const musicUri = 'https://audionautix.com/Music/12Mornings.mp3';
-
   const handleInit = useCallback(async () => {
-    const { duration: dur, playing: wasPlaying } = await setSound(musicUri);
-    duration.current = dur;
-    if (dur) {
-      setDisplayDuration(getMMSSFromSeconds(dur));
+    if (uri) {
+      const { duration: dur, playing: wasPlaying } = await setSound(uri);
+      duration.current = dur;
+      if (dur) {
+        setDisplayDuration(getMMSSFromSeconds(dur));
+      }
+      setPlaying(wasPlaying);
     }
-    setPlaying(wasPlaying);
-  }, [musicUri]);
+  }, [uri]);
 
   useEffect(() => {
     handleInit();
@@ -54,10 +75,14 @@ const useLogic = () => {
     [progress],
   );
 
-  useEffect(() => {
-    if (sound.current && playing !== undefined) {
+  const handleTogglePlay = useCallback(() => {
+    if (uri) {
       if (playing) {
-        playSound(() => {
+        if (!setAsPlaying.current) {
+          setAsPlaying.current = true;
+          setCurrentPlaying(params);
+        }
+        playSound(uri, () => {
           setPlaying(false);
         });
         if (duration.current) {
@@ -71,13 +96,48 @@ const useLogic = () => {
         sound.current?.pause();
       }
     }
+  }, [
+    setCurrentPlaying,
+    params,
+    playing,
+    uri,
+    clearTheInterval,
+    updateSeconds,
+  ]);
 
-    return clearTheInterval;
-  }, [playing, progress, updateSeconds, clearTheInterval]);
-
-  const handleTogglePlay = useCallback(() => {
+  const togglePlay = useCallback(() => {
     setPlaying((p) => !p);
   }, []);
+
+  const initializeMusicControls = useCallback(() => {
+    if (item) {
+      initMusicControls({
+        title: item.title,
+        duration: duration.current,
+        image: 'image' in item ? item.image : undefined,
+        album: subtitle,
+        artist: 'Jason Shaw',
+      });
+      setMusicControlsEvents(togglePlay);
+    }
+  }, [item, subtitle, togglePlay]);
+
+  useEffect(() => {
+    if (uri && sound.current && playing !== undefined) {
+      handleTogglePlay();
+      if (playing) {
+        initializeMusicControls();
+      }
+    }
+
+    return clearTheInterval;
+  }, [
+    initializeMusicControls,
+    uri,
+    playing,
+    handleTogglePlay,
+    clearTheInterval,
+  ]);
 
   const handleSliderChange = useCallback((p: number) => {
     if (duration.current && sound.current) {
@@ -109,7 +169,7 @@ const useLogic = () => {
     displayCurrentTime,
     displayDuration,
     playing,
-    handleTogglePlay,
+    togglePlay,
     handleSliderChange,
     handleSlidePan,
     progress,
