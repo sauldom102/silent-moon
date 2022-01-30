@@ -13,6 +13,7 @@ export { default as HorizontalMusicCard } from './HorizontalMusicCard';
 export { default as IconButton } from './IconButton';
 export { default as PlayerBar } from './PlayerBar';
 export { default as Pulse } from './Pulse';
+export { default as ScaleButton } from './ScaleButton';
 export { default as SmallPlayButton } from './SmallPlayButton';
 export { default as StatusBar } from './StatusBar';
 export { default as StoryCard } from './StoryCard';

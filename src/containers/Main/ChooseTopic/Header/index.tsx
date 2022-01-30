@@ -6,7 +6,7 @@ const Header: FC<Props> = () => (
   <Container>
     <Highlight>What Brings you</Highlight>
     <Title>to Silent Moon?</Title>
-    <Choose>choose a topic to focuse on:</Choose>
+    <Choose>choose a topic to focus on:</Choose>
   </Container>
 );
 

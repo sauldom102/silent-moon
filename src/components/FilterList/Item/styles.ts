@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components/native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import ScaleButton from 'components/ScaleButton';
 import Text from 'components/Text';
 import { IconProps, TitleProps } from './types';
 
-export const Container = styled(TouchableOpacity)``;
+export const Container = styled(ScaleButton)``;
 
 export const Main = styled.View``;
 

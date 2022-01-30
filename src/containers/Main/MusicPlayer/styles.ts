@@ -1,10 +1,14 @@
 import styled, { css } from 'styled-components/native';
-import FastImage from 'react-native-fast-image';
 import {
   BorderlessButton,
   TouchableOpacity,
 } from 'react-native-gesture-handler';
-import { Header as BaseHeader, PlayerBar, Text } from 'components';
+import {
+  Header as BaseHeader,
+  PlayerBar,
+  Text,
+  StatusBar as BaseStatusBar,
+} from 'components';
 import BasePlayButton from './PlayButton';
 import { BodyProps, ImageProps } from './types';
 
@@ -13,6 +17,10 @@ export const Container = styled.ScrollView.attrs({
 })`
   background-color: ${({ theme }) => theme.colors.background};
 `;
+
+export const StatusBar = styled(BaseStatusBar).attrs(({ theme }) => ({
+  light: !!theme.isNightMode,
+}))``;
 
 export const Header = styled(BaseHeader).attrs(({ theme }) => ({
   leftIconBackgroundColor: theme.isNightMode ? '#1F265E' : '#F2F2F2',
@@ -37,11 +45,11 @@ export const Top = styled.View`
 
 const imageSizing = css`
   width: 250px;
-  aspect-ratio: 1;
+  height: 250px;
   border-radius: 10px;
 `;
 
-export const Image = styled(FastImage)<ImageProps>`
+export const Image = styled.Image<ImageProps>`
   ${imageSizing}
   ${({ color }) =>
     color &&

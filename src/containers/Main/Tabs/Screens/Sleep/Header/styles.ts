@@ -12,6 +12,10 @@ export const Container = styled.View`
 `;
 
 export const Safe = styled.View<SafeProps>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: ${({ safeTop }) => safeTop + 66}px;
   background-color: #1f265e;
 `;

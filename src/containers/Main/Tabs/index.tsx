@@ -4,7 +4,7 @@ import {
   BottomTabBarProps,
 } from '@react-navigation/bottom-tabs';
 import { TabBarBottom } from './Components';
-import { Home, Meditate, Sleep } from './Screens';
+import { Home, Meditate, Sleep, Profile } from './Screens';
 
 const Blank = () => null;
 
@@ -18,7 +18,7 @@ const Tabs: FC = () => (
     <Tab.Screen name="Sleep" component={Sleep} />
     <Tab.Screen name="Meditate" component={Meditate} />
     <Tab.Screen name="Music" component={Blank} />
-    <Tab.Screen name="Profile" component={Blank} />
+    <Tab.Screen name="Profile" component={Profile} />
   </Tab.Navigator>
 );
 

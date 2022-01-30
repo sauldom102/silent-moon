@@ -5,23 +5,20 @@ import { getLoggedIn, setLoggedIn } from 'utils/storage';
 const globalState = createState(false);
 
 const useLoggedIn = () => {
-  const { set, value: isLoggedIn, get } = useGlobalState(globalState);
+  const { set, value: isLoggedIn } = useGlobalState(globalState);
 
   const [loaded, setLoaded] = useState(false);
 
   const updateLoggedIn = useCallback(
     (loggedIn = true) => {
-      const m = get();
-      if (m !== loggedIn) {
-        setLoggedIn(loggedIn);
-        set(loggedIn);
-      }
+      setLoggedIn(loggedIn);
+      set(loggedIn);
     },
-    [set, get],
+    [set],
   );
 
-  const handleInit = useCallback(() => {
-    const cachedLoggedIn = getLoggedIn();
+  const handleInit = useCallback(async () => {
+    const cachedLoggedIn = await getLoggedIn();
     if (cachedLoggedIn !== undefined && isLoggedIn !== cachedLoggedIn) {
       set(cachedLoggedIn);
     }
@@ -33,7 +30,7 @@ const useLoggedIn = () => {
   }, [handleInit]);
 
   return {
-    isLoggedIn: true,
+    isLoggedIn,
     updateLoggedIn,
     loaded,
   };

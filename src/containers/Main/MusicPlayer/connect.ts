@@ -4,7 +4,6 @@ import { AUDIONATIX_URL } from 'config';
 import { COURSE_MUSIC_ITEMS } from 'models/CourseMusic';
 import { MEDITATION_ITEMS } from 'models/MeditationItem';
 import { STORY_ITEMS } from 'models/StoryItem';
-import useThemeMode from 'theme/useThemeMode';
 import { openWebLink } from 'utils';
 import { Props } from './types';
 
@@ -15,9 +14,6 @@ const useConnect = () => {
   } = useRoute<Props['route']>();
 
   const [headerHeight, setHeaderHeight] = useState(0);
-
-  const { mode } = useThemeMode();
-  const isNightMode = mode === 'night';
 
   const item = useMemo(() => {
     if (type === 'meditation') {
@@ -32,7 +28,7 @@ const useConnect = () => {
     return undefined;
   }, [id, type]);
 
-  const { title } = item ?? {};
+  const { title, isDark } = item ?? {};
   const image = item && 'image' in item ? item.image : undefined;
   const backgroundColor =
     item && 'backgroundColor' in item ? item.backgroundColor : undefined;
@@ -65,9 +61,9 @@ const useConnect = () => {
     title,
     subtitle,
     item,
+    isDark,
     image,
     backgroundColor,
-    isNightMode,
     headerHeight,
     setHeaderHeight,
     handlePressCredits,

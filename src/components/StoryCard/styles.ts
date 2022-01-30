@@ -1,16 +1,15 @@
 import styled from 'styled-components/native';
-import FastImage from 'react-native-fast-image';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import ScaleButton from 'components/ScaleButton';
 import Text from 'components/Text';
 import { ImageProps } from './types';
 
-export const Container = styled(TouchableOpacity).attrs({
+export const Container = styled(ScaleButton).attrs({
   activeOpacity: 0.5,
 })``;
 
 export const Main = styled.View``;
 
-export const Image = styled(FastImage)<ImageProps>`
+export const Image = styled.Image<ImageProps>`
   width: ${({ theme }) => (theme.device.width - 60) / 2}px;
   height: 113px;
   background-color: ${({ color }) => color};

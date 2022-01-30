@@ -15,16 +15,22 @@ const useConnect = () => {
     (id: string) => {
       navigate('MusicTopic', {
         id,
+        fromSleep: true,
       });
     },
     [navigate],
   );
+
+  const handlePressInfo = useCallback(() => {
+    navigate('SleepWelcome');
+  }, [navigate]);
 
   return {
     items: ITEMS,
     handlePressStart,
     handleOpenStoryItem,
     handlePressStoryType,
+    handlePressInfo,
   };
 };
 

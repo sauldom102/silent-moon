@@ -1,11 +1,11 @@
 import styled from 'styled-components/native';
-import { RectButton } from 'react-native-gesture-handler';
 import { HorizontalStains } from 'components/Icons';
+import ScaleButton from 'components/ScaleButton';
 import SmallPlayButton from 'components/SmallPlayButton';
 import Text from 'components/Text';
 import { LightProps } from './types';
 
-export const Container = styled(RectButton).attrs({
+export const Container = styled(ScaleButton).attrs({
   activeOpacity: 0.1,
 })`
   border-radius: 10px;

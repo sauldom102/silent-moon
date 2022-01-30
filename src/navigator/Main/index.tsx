@@ -6,7 +6,10 @@ import { stackScreenOptions } from '../constants';
 const Stack = createNativeStackNavigator();
 
 const Main = () => (
-  <Stack.Navigator screenOptions={stackScreenOptions} initialRouteName="Tabs">
+  <Stack.Navigator
+    screenOptions={stackScreenOptions}
+    initialRouteName="Welcome"
+  >
     <Stack.Screen name="Tabs" component={Tabs} />
     <Stack.Screen name="Welcome" component={Welcome} />
     <Stack.Screen name="ChooseTopic" component={ChooseTopic} />

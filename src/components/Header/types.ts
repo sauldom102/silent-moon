@@ -1,13 +1,13 @@
 import { ViewStyle } from 'react-native';
 
 export type Props = {
-  leftIcon: 'back' | 'close';
+  leftIcon?: 'back' | 'close';
   onPressLeft?: () => void;
   leftButtonWithBorder?: boolean;
-  leftIconBackgroundColor: string;
-  leftIconColor: string;
+  leftIconBackgroundColor?: string;
+  leftIconColor?: string;
   title?: string;
-  rightIcon?: 'download';
+  rightIcon?: 'download' | 'info';
   onPressRight?: () => void;
   secondRightIcon?: 'like';
   onPressSecondRight?: () => void;

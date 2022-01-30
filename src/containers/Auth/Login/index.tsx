@@ -14,8 +14,15 @@ import {
 import { Props } from './types';
 
 const Login: FC<Props> = () => {
-  const { safeBottom, handleGoBack, inputRefs, control, submit, isValid } =
-    useConnect();
+  const {
+    safeBottom,
+    handleGoBack,
+    inputRefs,
+    control,
+    submit,
+    isValid,
+    handleContinueSocial,
+  } = useConnect();
 
   return (
     <Container>
@@ -27,6 +34,7 @@ const Login: FC<Props> = () => {
           <AuthFormHeader
             title="Welcome Back!"
             subtitle="or log in with email"
+            onPressButton={handleContinueSocial}
           />
           <Inputs>
             <Input

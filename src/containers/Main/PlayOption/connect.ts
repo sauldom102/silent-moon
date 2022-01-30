@@ -30,7 +30,8 @@ const useConnect = () => {
 
   const item = useMemo(() => STORY_ITEMS.find((s) => s.id === id), [id]);
 
-  const itemTopic = item?.topic;
+  const { topic: itemTopic, isDark } = item ?? {};
+
   const relatedItems = useMemo(
     () =>
       itemTopic
@@ -41,6 +42,7 @@ const useConnect = () => {
 
   return {
     item,
+    isDark,
     relatedItems,
     safeBottom,
     handlePressClose,

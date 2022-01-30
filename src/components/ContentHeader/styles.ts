@@ -41,6 +41,8 @@ export const Info = styled.View`
   margin-top: 30px;
 `;
 
-export const LabeledIcon = styled(BaseLabeledIcon)`
+export const LabeledIcon = styled(BaseLabeledIcon).attrs(({ theme }) => ({
+  light: !theme.isNightMode,
+}))`
   margin-right: 40px;
 `;

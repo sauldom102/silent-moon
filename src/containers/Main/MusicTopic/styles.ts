@@ -1,10 +1,18 @@
 import styled from 'styled-components/native';
-import { Header as BaseHeader, StoryList } from 'components';
+import {
+  Header as BaseHeader,
+  StoryList,
+  StatusBar as BaseStatusBar,
+} from 'components';
 
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
 `;
+
+export const StatusBar = styled(BaseStatusBar).attrs(({ theme }) => ({
+  light: !!theme.isNightMode,
+}))``;
 
 export const Header = styled(BaseHeader).attrs(({ theme }) => ({
   leftIcon: 'back',

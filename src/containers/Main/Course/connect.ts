@@ -2,12 +2,9 @@ import { useCallback, useMemo } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { COURSES } from 'models/Course';
-import useThemeMode from 'theme/useThemeMode';
 import { Props } from './types';
 
 const useConnect = () => {
-  const { mode } = useThemeMode();
-
   const { navigate, canGoBack, goBack } = useNavigation<Props['navigation']>();
   const {
     params: { id },
@@ -35,7 +32,6 @@ const useConnect = () => {
 
   return {
     item,
-    isNightMode: mode === 'night',
     handlePressClose,
     handlePressPlayButton,
     safeBottom,

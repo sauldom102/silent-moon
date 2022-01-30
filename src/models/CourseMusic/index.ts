@@ -22,6 +22,7 @@ export const COURSE_MUSIC_ITEMS = [
   ...c,
   id: uniqueId(),
   courseId: COURSES[0].id,
+  isDark: false,
 }));
 
 type CourseMusic = ArrayElement<typeof COURSE_MUSIC_ITEMS>;

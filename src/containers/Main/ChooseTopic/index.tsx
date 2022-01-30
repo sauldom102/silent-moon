@@ -8,7 +8,7 @@ import { Container, FlatGrid } from './styles';
 import { Props } from './types';
 
 const ChooseTopic: FC<Props> = () => {
-  const { safeTop, safeBottom, data } = useConnect();
+  const { safeTop, safeBottom, data, handlePressItem } = useConnect();
 
   const handleRenderItemChildren = useCallback(({ childrenProps }) => {
     const {
@@ -37,6 +37,7 @@ const ChooseTopic: FC<Props> = () => {
         layouts={{ 'layout-1': GRID_LAYOUT }}
         ListHeaderComponent={Header}
         renderItemChildren={handleRenderItemChildren}
+        onItemPress={handlePressItem}
         safeTop={safeTop}
         safeBottom={safeBottom}
       />

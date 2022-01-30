@@ -1,10 +1,7 @@
 import styled from 'styled-components/native';
-import FastImage from 'react-native-fast-image';
-import { RectButton } from 'react-native-gesture-handler';
-import Animated from 'react-native-reanimated';
-import { Text, Button as BaseButton } from 'components';
+import { Text, Button as BaseButton, ScaleButton } from 'components';
 
-export const Container = Animated.createAnimatedComponent(styled(RectButton)``);
+export const Container = styled(ScaleButton)``;
 
 export const Main = styled.View`
   justify-content: flex-end;
@@ -15,7 +12,7 @@ export const Main = styled.View`
   z-index: -1;
 `;
 
-export const Image = styled(FastImage).attrs({
+export const Image = styled.Image.attrs({
   resizeMode: 'cover',
 })`
   position: absolute;

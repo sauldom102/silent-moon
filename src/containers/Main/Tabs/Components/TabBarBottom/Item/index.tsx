@@ -1,5 +1,4 @@
 import React, { useCallback, FC, memo } from 'react';
-import useThemeMode from 'theme/useThemeMode';
 import { useCurrentPlaying } from 'utils';
 import Icon from './Icon';
 import { Container, Content, Label } from './styles';
@@ -7,8 +6,6 @@ import { Props } from './types';
 
 const Item: FC<Props> = ({ jumpTo, isFocused, routeName }) => {
   const { currentPlaying } = useCurrentPlaying();
-
-  const { updateMode } = useThemeMode();
 
   const handlePress = useCallback(() => {
     if (routeName === 'Music') {
@@ -18,10 +15,9 @@ const Item: FC<Props> = ({ jumpTo, isFocused, routeName }) => {
       return null;
     }
 
-    updateMode(routeName === 'Sleep' ? 'night' : 'day');
     jumpTo(routeName);
     return null;
-  }, [jumpTo, routeName, updateMode, currentPlaying]);
+  }, [jumpTo, routeName, currentPlaying]);
 
   return (
     <Container>

@@ -1,10 +1,14 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import chunk from 'lodash/chunk';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ITEMS } from './constants';
+import { Props } from './types';
 
 const useConnect = () => {
   const { top: safeTop, bottom: safeBottom } = useSafeAreaInsets();
+
+  const { navigate } = useNavigation<Props['navigation']>();
 
   const data = useMemo(() => {
     const chunked = chunk(ITEMS, 4);
@@ -32,10 +36,15 @@ const useConnect = () => {
     });
   }, []);
 
+  const handlePressItem = useCallback(() => {
+    navigate('Tabs');
+  }, [navigate]);
+
   return {
     safeTop,
     safeBottom,
     data,
+    handlePressItem,
   };
 };
 

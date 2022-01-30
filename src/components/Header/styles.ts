@@ -11,7 +11,7 @@ export const Container = styled(View)<ContainerProps>`
   padding: ${({ safeTop }) => safeTop + 12}px 20px 8px;
 `;
 
-export const Right = styled.View`
+export const Side = styled.View`
   flex-direction: row;
   align-items: center;
   min-width: 55px;

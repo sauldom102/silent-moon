@@ -17,6 +17,7 @@ export const STORY_ITEMS = [
     image: FOCUS_IMG,
     color: '#AFDBC5',
     backgroundColor: '#AFDBC5',
+    isDark: false,
   },
   {
     title: 'Happiness',
@@ -26,6 +27,7 @@ export const STORY_ITEMS = [
     image: HAPPINESS_IMG,
     color: '#FBD89F',
     backgroundColor: '#FBD89F',
+    isDark: false,
   },
   ...[
     {
@@ -55,6 +57,7 @@ export const STORY_ITEMS = [
   ].map((c) => ({
     ...c,
     topic: 'Sleep Music',
+    isDark: true,
     duration: '45 min',
     color: '#fff',
     backgroundColor: c.backgroundColor ?? '#fff',

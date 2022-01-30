@@ -30,6 +30,10 @@ const useConnect = () => {
     validationSchema,
   });
 
+  const handleContinueSocial = useCallback(() => {
+    updateLoggedIn(true);
+  }, [updateLoggedIn]);
+
   return {
     safeBottom,
     handleGoBack,
@@ -37,6 +41,7 @@ const useConnect = () => {
     control,
     submit,
     isValid,
+    handleContinueSocial,
   };
 };
 

@@ -39,6 +39,7 @@ export const MEDITATION_ITEMS = flatten(
 ).map((it) => ({
   ...it,
   id: uniqueId(),
+  isDark: false,
 }));
 
 type MeditationItem = ArrayElement<typeof MEDITATION_ITEMS>;

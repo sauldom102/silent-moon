@@ -5,6 +5,7 @@ export { default as CloseIcon } from './CloseIcon';
 export { default as DownloadIcon } from './DownloadIcon';
 export { default as ForwardIcon } from './ForwardIcon';
 export { default as HorizontalStains } from './HorizontalStains';
+export { default as InfoIcon } from './InfoIcon';
 export { default as LightLogoIcon } from './LightLogoIcon';
 export { default as LikeIcon } from './LikeIcon';
 export { default as ListenIcon } from './ListenIcon';

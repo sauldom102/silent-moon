@@ -2,7 +2,7 @@ import React, { FC, memo, useEffect } from 'react';
 import { useLayout } from '@react-native-community/hooks';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import IconButton from 'components/IconButton';
-import { Container, Right, SecondRightIconButton, Title } from './styles';
+import { Container, Side, SecondRightIconButton, Title } from './styles';
 import { Props } from './types';
 
 const Header: FC<Props> = ({
@@ -31,15 +31,19 @@ const Header: FC<Props> = ({
 
   return (
     <Container onLayout={onLayout} safeTop={safeTop} style={style}>
-      <IconButton
-        icon={leftIcon}
-        onPress={onPressLeft}
-        iconColor={leftIconColor}
-        backgroundColor={leftIconBackgroundColor}
-        borderColor={leftButtonWithBorder ? '#EBEAEC' : undefined}
-      />
+      <Side>
+        {leftIcon && leftIconColor && leftIconBackgroundColor && (
+          <IconButton
+            icon={leftIcon}
+            onPress={onPressLeft}
+            iconColor={leftIconColor}
+            backgroundColor={leftIconBackgroundColor}
+            borderColor={leftButtonWithBorder ? '#EBEAEC' : undefined}
+          />
+        )}
+      </Side>
       {!!title && <Title>{title}</Title>}
-      <Right>
+      <Side>
         {secondRightIcon && rightIconsColor && rightIconsBackgroundColor && (
           <SecondRightIconButton
             icon={secondRightIcon}
@@ -56,7 +60,7 @@ const Header: FC<Props> = ({
             backgroundColor={rightIconsBackgroundColor}
           />
         )}
-      </Right>
+      </Side>
     </Container>
   );
 };

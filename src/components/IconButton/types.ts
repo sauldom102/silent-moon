@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-type Icon = 'back' | 'close' | 'like' | 'download';
+type Icon = 'back' | 'close' | 'like' | 'download' | 'info';
 
 export type Props = {
   backgroundColor: string;

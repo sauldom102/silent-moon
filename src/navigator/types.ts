@@ -12,6 +12,7 @@ type MusicPlayerParams = {
 
 type MusicTopicParams = {
   id: string;
+  fromSleep?: boolean;
 };
 
 type CourseParams = {
@@ -33,6 +34,8 @@ export type ScreensParams = {
   MusicPlayer: MusicPlayerParams;
   MusicTopic: MusicTopicParams;
   Course: CourseParams;
+  Profile: undefined;
+  Tabs: undefined;
 };
 
 export interface MainStackScreenProps<ScreenName extends keyof ScreensParams> {

@@ -3,8 +3,8 @@ import { useRoute } from '@react-navigation/native';
 import { useSharedValue } from 'react-native-reanimated';
 import {
   getMMSSFromSeconds,
-  initMusicControls,
-  setMusicControlsEvents,
+  // initMusicControls,
+  // setMusicControlsEvents,
   useCurrentPlaying,
 } from 'utils';
 import { sound, playSound, setSound } from 'utils/sound';
@@ -45,10 +45,11 @@ const useLogic = ({ item, subtitle }: UseLogicParams) => {
 
   const handleInit = useCallback(async () => {
     if (uri) {
-      const { duration: dur, playing: wasPlaying } = await setSound(uri);
+      const { duration: dur = 0, playing: wasPlaying = false } =
+        (await setSound({ uri })) ?? {};
       duration.current = dur;
       if (dur) {
-        setDisplayDuration(getMMSSFromSeconds(dur));
+        setDisplayDuration(getMMSSFromSeconds(dur / 1000));
       }
       setPlaying(wasPlaying);
     }
@@ -77,6 +78,7 @@ const useLogic = ({ item, subtitle }: UseLogicParams) => {
 
   const handleTogglePlay = useCallback(() => {
     if (uri) {
+      console.log({ playing });
       if (playing) {
         if (!setAsPlaying.current) {
           setAsPlaying.current = true;
@@ -87,13 +89,21 @@ const useLogic = ({ item, subtitle }: UseLogicParams) => {
         });
         if (duration.current) {
           interval.current = setInterval(() => {
-            sound.current?.getCurrentTime(updateSeconds);
+            sound.current.getStatusAsync().then((s) => {
+              if (s.isLoaded) {
+                updateSeconds(s.positionMillis);
+              }
+            });
           }, 1000 / 30);
         }
       } else {
         clearTheInterval();
-        sound.current?.getCurrentTime(updateSeconds);
-        sound.current?.pause();
+        sound.current.getStatusAsync().then((s) => {
+          if (s.isLoaded) {
+            updateSeconds(s.positionMillis);
+          }
+        });
+        sound.current.pauseAsync();
       }
     }
   }, [
@@ -111,16 +121,16 @@ const useLogic = ({ item, subtitle }: UseLogicParams) => {
 
   const initializeMusicControls = useCallback(() => {
     if (item) {
-      initMusicControls({
-        title: item.title,
-        duration: duration.current,
-        image: 'image' in item ? item.image : undefined,
-        album: subtitle,
-        artist: 'Jason Shaw',
-      });
-      setMusicControlsEvents(togglePlay);
+      // initMusicControls({
+      //   title: item.title,
+      //   duration: duration.current,
+      //   image: 'image' in item ? item.image : undefined,
+      //   album: subtitle,
+      //   artist: 'Jason Shaw',
+      // });
+      // setMusicControlsEvents(togglePlay);
     }
-  }, [item, subtitle, togglePlay]);
+  }, [item]);
 
   useEffect(() => {
     if (uri && sound.current && playing !== undefined) {
@@ -141,7 +151,7 @@ const useLogic = ({ item, subtitle }: UseLogicParams) => {
 
   const handleSliderChange = useCallback((p: number) => {
     if (duration.current && sound.current) {
-      sound.current.setCurrentTime(p * duration.current);
+      sound.current.setPositionAsync(p * duration.current);
     }
   }, []);
 
@@ -153,7 +163,7 @@ const useLogic = ({ item, subtitle }: UseLogicParams) => {
     if (duration.current && sound.current) {
       const newSeconds = Math.max(0, currentSeconds - 15);
       updateSeconds(newSeconds);
-      sound.current.setCurrentTime(newSeconds);
+      sound.current.setPositionAsync(newSeconds);
     }
   }, [currentSeconds, updateSeconds]);
 
@@ -161,7 +171,7 @@ const useLogic = ({ item, subtitle }: UseLogicParams) => {
     if (duration.current && sound.current) {
       const newSeconds = Math.min(duration.current, currentSeconds + 15);
       updateSeconds(newSeconds);
-      sound.current.setCurrentTime(newSeconds);
+      sound.current.setPositionAsync(newSeconds);
     }
   }, [currentSeconds, updateSeconds]);
 

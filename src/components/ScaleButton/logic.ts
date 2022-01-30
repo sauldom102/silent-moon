@@ -11,12 +11,13 @@ import {
 const useLogic = () => {
   const active = useSharedValue(false);
 
-  const handleActiveChange = useCallback(
-    (a: boolean) => {
-      active.value = a;
-    },
-    [active],
-  );
+  const handlePressIn = useCallback(() => {
+    active.value = true;
+  }, [active]);
+
+  const handlePressOut = useCallback(() => {
+    active.value = false;
+  }, [active]);
 
   const scale = useDerivedValue(
     () =>
@@ -38,7 +39,8 @@ const useLogic = () => {
   );
 
   return {
-    handleActiveChange,
+    handlePressIn,
+    handlePressOut,
     animatedStyle,
   };
 };
