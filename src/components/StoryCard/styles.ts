@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import FastImage from 'react-native-fast-image';
 import ScaleButton from 'components/ScaleButton';
 import Text from 'components/Text';
 import { ImageProps } from './types';
@@ -9,7 +10,7 @@ export const Container = styled(ScaleButton).attrs({
 
 export const Main = styled.View``;
 
-export const Image = styled.Image<ImageProps>`
+export const Image = styled(FastImage)<ImageProps>`
   width: ${({ theme }) => (theme.device.width - 60) / 2}px;
   height: 113px;
   background-color: ${({ color }) => color};

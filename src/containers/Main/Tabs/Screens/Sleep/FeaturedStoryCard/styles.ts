@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import FastImage from 'react-native-fast-image';
 import { Text, Button as BaseButton, ScaleButton } from 'components';
 
 export const Container = styled(ScaleButton)``;
@@ -12,7 +13,7 @@ export const Main = styled.View`
   z-index: -1;
 `;
 
-export const Image = styled.Image.attrs({
+export const Image = styled(FastImage).attrs({
   resizeMode: 'cover',
 })`
   position: absolute;

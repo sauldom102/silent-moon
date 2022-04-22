@@ -1,9 +1,12 @@
 import { createRef, MutableRefObject } from 'react';
-import Sound, { setCategory, setActive } from 'react-native-sound';
 
-export const sound = createRef() as MutableRefObject<Sound>;
+const Sound = require('react-native-sound');
 
-export const playingSound = createRef() as MutableRefObject<Sound>;
+const { setActive, setCategory } = Sound;
+
+export const sound = createRef() as MutableRefObject<SoundType>;
+
+export const playingSound = createRef() as MutableRefObject<SoundType>;
 
 export const soundPath = createRef() as MutableRefObject<string>;
 
@@ -31,7 +34,7 @@ export const setSound = (uri: string) => {
 
   soundPath.current = uri;
   return new Promise<SetSoundResult>((res) => {
-    sound.current = new Sound(uri, undefined, (error) => {
+    sound.current = new Sound(uri, undefined, (error: any) => {
       if (error) {
         return;
       }
