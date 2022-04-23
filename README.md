@@ -1,6 +1,4 @@
-# Template Starter for RN Projects
-
-This special silentmoon is a project to have a template to start developing new projects really fast, with all the libraries and tools we use when we develop RN projects Z1-like. This project will enable the team to start a project without the tears and losing 2 or 3 days to just set up the project. Avoid creepy eslint, prettier, RN and other stuff configurations and launch the rocket since minute 0 🚀
+# SilentMoon
 
 ## 🚀 Getting started
 
@@ -12,7 +10,7 @@ This special silentmoon is a project to have a template to start developing new 
 - Install [Fastlane](https://docs.fastlane.tools/) `sudo gem install fastlane -NV` or `brew cask install fastlane`.
 - Install [Cocoapods](https://cocoapods.org) `brew install cocoapods` or `sudo gem install cocoapods`.
 - Install [RNDebugger](https://github.com/jhen0409/react-native-debugger/releases) `brew update && brew cask install react-native-debugger`.
-- Clone [Github Repository](https://github.com/z1digitalstudio/fieldtrip-mobile.git).
+- Clone [Github Repository](https://github.com/sauldom102/silent-moon.git).
 - Change project's name with `yarn starter`.
 - Install dependencies `yarn` or `yarn install`.
 - Install pods `cd ios && pod install`.
